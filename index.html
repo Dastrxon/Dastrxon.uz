@@ -407,7 +407,6 @@ header{
 
 </div>
 
-<!-- MODAL -->
 <div class="overlay" id="overlay" onclick="bgClose(event)">
   <div class="modal">
     <div class="mhead">
@@ -446,7 +445,7 @@ header{
       </div>
 
       <div class="warnbox">
-        ⚠️ To'lov <strong>oldindan</strong> amalga oshiriladi. Xizmat haqqi <strong>10%</strong>. Mahsulot online taksi orqali yetkaziladi — yo'l haqi mijoz tomonidan to'lanadi.
+        ⚠️ To'lov <strong>oldindan</strong> amalga oshiriladi. Mahsulot online taksi orqali yetkazib beriladi — yo'l haqi mijoz tomonidan to'lanadi.
       </div>
 
       <button class="sendbtn" id="sendbtn" onclick="send()">📨 Buyurtma yuborish</button>
@@ -465,29 +464,72 @@ const P=[
   {id:'zateya',name:'Zateya 1L', price:26000, img:'zateya1.jpg'},
   {id:'mosh',name:'Mosh', price:22000, img:'mosh.jpg'},
   {id:'vermishel',name:'SB Spagetti', price:12000,img:'vermishelsb.jpg'},
-  {id:'bottega',name:'Bottega Spagetti',    price:10000, img:'bottegavermishel.jpg'},
-  {id:'bottega',name:'Bottega Burama',   price:8000, img:'bottegaburama.jpg'},
-  {id:'bottega',name:'Bottega Pero',   price:8000, img:'bottegapero.jpg'},
-  {id:'golden',name:'Golden Ugra', price:5000, img:'goldenugra.jpg'},
-  {id:'golden',name:'Spagetti SB', price:5000, img:'spagettisb.jpg'},
-  {id:'sana',name:'Sana Shox', price:10000,img:'sanashox.jpg'},
-  {id:'sana',name:'Sana Burama',    price:10000, img:'sanaburama.jpg'},
-  {id:'ravon',name:'Ravon Vermishel',   price:10000, img:'ravonvermishel.jpg'},
-  {id:'bonmak',name:'Bonmak Makaron',   price:10000, img:'bonmakpvermishel.jpg'},
-  {id:'bonmak',name:'Bonmak Uzun', price:10000, img:'bonmakpuzun.jpg'},
-  {id:'ravon',name:'Ravon Disk', price:10000, img:'ravondisk.jpg'},
-  {id:'bonmak',name:'Bonmak Mayda', price:10000,img:'bonmakpmayda.jpg'},
-  {id:'bonmak',name:'Bonmak Shox',    price:10000, img:'bonmakpshox.jpg'},
-  {id:'bonmak',name:'Bonmak Burama',   price:10000, img:'bonmakpburama.jpg'},
-  {id:'bonmak',name:'Bonmak Pero',   price:10000, img:'bonmakppero.jpg'},
-  {id:'bonmak',name:'Bonmak Pero', price:10000, img:'bonmakppero2.jpg'},
-  {id:'golden',name:'Spagetti Tuxumli', price:5000, img:'spagettiuzun.jpg'},
+  {id:'bottega_spagetti',name:'Bottega Spagetti',     price:10000, img:'bottegavermishel.jpg'},
+  {id:'bottega_burama',name:'Bottega Burama',   price:8000, img:'bottegaburama.jpg'},
+  {id:'bottega_pero',name:'Bottega Pero',   price:8000, img:'bottegapero.jpg'},
+  {id:'golden_ugra',name:'Golden Ugra', price:5000, img:'goldenugra.jpg'},
+  {id:'spagetti_sb',name:'Spagetti SB', price:5000, img:'spagettisb.jpg'},
+  {id:'sana_shox',name:'Sana Shox', price:10000,img:'sanashox.jpg'},
+  {id:'sana_burama',name:'Sana Burama',     price:10000, img:'sanaburama.jpg'},
+  {id:'ravon_vermishel',name:'Ravon Vermishel',   price:10000, img:'ravonvermishel.jpg'},
+  {id:'bonmak_vermishel',name:'Bonmak Makaron',   price:10000, img:'bonmakpvermishel.jpg'},
+  {id:'bonmak_uzun',name:'Bonmak Uzun', price:10000, img:'bonmakpuzun.jpg'},
+  {id:'ravon_disk',name:'Ravon Disk', price:10000, img:'ravondisk.jpg'},
+  {id:'bonmak_mayda',name:'Bonmak Mayda', price:10000,img:'bonmakpmayda.jpg'},
+  {id:'bonmak_shox',name:'Bonmak Shox',     price:10000, img:'bonmakpshox.jpg'},
+  {id:'bonmak_burama',name:'Bonmak Burama',   price:10000, img:'bonmakpburama.jpg'},
+  {id:'bonmak_pero',name:'Bonmak Pero',   price:10000, img:'bonmakppero.jpg'},
+  {id:'bonmak_pero2',name:'Bonmak Pero', price:10000, img:'bonmakppero2.jpg'},
+  {id:'spagetti_tuxumli',name:'Spagetti Tuxumli', price:5000, img:'spagettiuzun.jpg'},
   {id:'dala',name:'Dala Makaron', price:10000,img:'dalamakaron.jpg'},
-  {id:'bonmak',name:'Makaron Burama',    price:10000, img:'bonmakburama.jpg'},
-  {id:'bonmak',name:'Makaron Uzun',   price:10000, img:'bonmakuzun.jpg'},
-  {id:'bonmak',name:'Makaron Pero',   price:10000, img:'bonmakpero.jpg'},
-  {id:'bonmak',name:'Makaron Shox', price:10000, img:'bonmakshox.jpg'},
-  {id:'bonmak',name:'Makaron Mayda', price:10000, img:'bonmakmayda.jpg'},
+  {id:'makaron_burama',name:'Makaron Burama',     price:10000, img:'bonmakburama.jpg'},
+  {id:'makaron_uzun',name:'Makaron Uzun',   price:10000, img:'bonmakuzun.jpg'},
+  {id:'makaron_pero',name:'Makaron Pero',   price:10000, img:'bonmakpero.jpg'},
+  {id:'makaron_shox',name:'Makaron Shox', price:10000, img:'bonmakshox.jpg'},
+  {id:'makaron_mayda',name:'Makaron Mayda', price:10000, img:'bonmakmayda.jpg'},
+  {id:'goldmag',name:'Goldmag', price:12000, img:'goldmag.jpg'},
+  {id:'gudmak',name:'Gudmak', price:12000, img:'gudmak.jpg'},
+  {id:'jayma2',name:'Jayma', price:18000, img:'jayma2.jpg'},
+  {id:'jayma1',name:'Jayma', price:15000, img:'jayma1.jpg'},
+  {id:'norin',name:'Norin', price:18000, img:'norin.jpg'},
+  {id:'grechka',name:'Grechka', price:10000, img:'grechka.jpg'},
+  {id:'noxat',name:'Noxat', price:17000, img:'noxat.jpg'},
+  {id:'gorox',name:'Gorox', price:10000, img:'gorox.jpg'},
+  {id:'ovsyanka',name:'Ovsyanka', price:10000, img:'ovsyanka.jpg'},
+  {id:'kasha',name:'Kasha', price:12000, img:'kasha.jpg'},
+  {id:'perlovka',name:'Perlovka', price:8000, img:'perlovka.jpg'},
+  {id:'ozbegim',name:"O'zbegim ko'k choy", price:20000, img:'ozbegim.jpg'},
+  {id:'gt55',name:"Gt55 ko'k choy", price:20000, img:'gt55.jpg'},
+  {id:'turoncamel200',name:"Turoncamel ko'k choy 200-gram", price:10000, img:'turoncamel200.jpg'},
+  {id:'turoncamel400',name:"Turoncamel ko'k choy 400-gram", price:20000, img:'turoncamel400.jpg'},
+  {id:'makonpachka',name:"Makon ko'k choy 400-gram", price:25000, img:'makonpachka.jpg'},
+  {id:'ziynatvodiy',name:"Ziynatvodiy ko'k choy 400-gram", price:20000, img:'ziynatvodiy.jpg'},
+  {id:'milliy',name:"Milliy ko'k choy 400-gram", price:20000, img:'milliy.jpg'},
+  {id:'n9371',name:"9371 ko'k choy 400-gram", price:20000, img:'9371.jpg'},
+  {id:'n8810_125',name:"8810 ko'k choy 125-gram", price:25000, img:'8810-125.jpg'},
+  {id:'n8810_200',name:"8810 ko'k choy 200-gram", price:30000, img:'8810-200.jpg'},
+  {id:'chaman',name:"Chaman ko'k choy", price:30000, img:'chaman.jpg'},
+  {id:'orzukok',name:'Orzu tuz', price:5000, img:'orzukok.jpg'},
+  {id:'milliy2',name:'Milliy tuz', price:2000, img:'milliy2.jpg'},
+  {id:'orzuqizil',name:'Orzu mayda tuz', price:6000, img:'orzuqizil.jpg'},
+  {id:'samara',name:'Samara tuz', price:2500, img:'samara.jpg'},
+  {id:'milliy1',name:'Milliy arzon tuz', price:1000, img:'milliy1.jpg'},
+  {id:'ziyonur',name:'Ziyonur arzon tuz', price:1000, img:'ziyonur.jpg'},
+  {id:'orzukok3',name:'Orzu 3-kg', price:12000, img:'orzukok3.jpg'},
+  {id:'asli3',name:'Asli 1-navli un 3-kg', price:20000, img:'asli3.jpg'},
+  {id:'asli5',name:'Asli 1-navli un 5-kg', price:32000, img:'asli5.jpg'},
+  {id:'zlatojar3',name:'Zlatojar 3L', price:68000, img:'zlatojar3.jpg'},
+  {id:'zateya1_8',name:'Zateya 1.8L', price:48000, img:'zateya1.8.jpg'},
+  {id:'blago1_8',name:'Blago 1.8L', price:43000, img:'blago1.8.jpg'},
+  {id:'moskovskoye',name:'Moskovskoye 1L', price:22000, img:'moskovskoye.jpg'},
+  {id:'blako5',name:'Blako 5L', price:100000, img:'blako5.jpg'},
+  {id:'sifat5',name:'Sifat 5L', price:100000, img:'sifat5.jpg'},
+  {id:'muslim5',name:'Muslim 5L', price:100000, img:'muslim5.jpg'},
+  {id:'sharq1',name:'Sharq 1L', price:22000, img:'sharq1.jpg'},
+  {id:'n3jelaniyatomat',name:'Tri Jelaniya tomat', price:15000, img:'3jelaniyatomat.jpg'},
+  {id:'kanztomat',name:'Kanz tomat', price:13000, img:'kanztomat.jpg'},
+  {id:'sardobatomat0_5',name:'Sardoba tomat 0.5-kg', price:15000, img:'sardobatomat0.5.jpg'},
+  {id:'sardobatomat1',name:'Sardoba tomat 1-kg', price:30000, img:'sardobatomat1.jpg'}
 ];
 
 let cart={};
@@ -635,3 +677,5 @@ syncCartBtn();
 </script>
 </body>
 </html>
+
+```
