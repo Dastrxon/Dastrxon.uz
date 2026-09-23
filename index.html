@@ -833,7 +833,7 @@ function send(){
   const items=Object.keys(cart).map(id=>{const p=P.find(x=>x.id===id);return p?`${p.name} x${cart[id]}`:''}).filter(Boolean).join(', ');
   const total=Object.keys(cart).reduce((s,id)=>{const p=P.find(x=>x.id===id);return s+(p?p.price*cart[id]:0);},0);
   const msg=`🛒 Yangi buyurtma!\n\n👤 Ism: ${name}\n📞 Tel: ${phone}\n📍 Manzil: ${addr||'—'}\n🚚 Yetkazish: ${del}\n\n📦 Mahsulotlar:\n${items}\n\n💰 Jami: ${fmt(total)} so'm`;
-  window.open('https://t.me/Dastrxon_uz?text='+encodeURIComponent(msg));
+  window.open('https://t.me/Dastrxon_uzz?text='+encodeURIComponent(msg));
   cart={};sync();closeCart();
   document.getElementById('f-name').value='';
   document.getElementById('f-phone').value='';
