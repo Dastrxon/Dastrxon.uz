@@ -3,185 +3,514 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dastrxon.uz — To'raqo'rg'on</title>
 <meta name="theme-color" content="#080b5c">
-<meta name="description" content="Dastrxon.uz — To'raqo'rg'ondagi online buyurtma do'koni">
 <meta property="og:title" content="Dastrxon.uz">
 <meta property="og:description" content="To'raqo'rg'ondagi online buyurtma do'koni">
 <meta property="og:image" content="Dastrxon.uz logo.jpg">
-<title>Dastrxon.uz — To'raqo'rg'on</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
+*{margin:0;padding:0;box-sizing:border-box;}
+
 :root{
-  --navy:#080b5c;--navy2:#11177d;--navy3:#3038a8;--navy-dark:#05073f;
-  --white:#fff;--bg:#f5f6fb;--card:#fff;--text:#11143b;--muted:#707493;
-  --line:rgba(8,11,92,.10);--soft:#eef0fa;--success:#16a36a;--danger:#e5484d;
-  --shadow:0 8px 30px rgba(8,11,92,.08);--shadow2:0 18px 45px rgba(8,11,92,.14);
-  --r:18px
+  --navy: #080b5c;
+  --navy2: #12188a;
+  --navy3: #1f27b5;
+  --navy-dark: #040638;
+  --white: #ffffff;
+  --soft: #f4f6fc;
+  --text: #0f1438;
+  --muted: #62688f;
+  --line: rgba(8, 11, 92, 0.08);
+  --accent: #ffb703;
+  --r-lg: 20px;
+  --r-md: 14px;
+  --shadow-sm: 0 4px 12px rgba(8, 11, 92, 0.05);
+  --shadow-md: 0 8px 24px rgba(8, 11, 92, 0.08);
+  --shadow-lg: 0 16px 32px rgba(8, 11, 92, 0.12);
 }
-html{scroll-behavior:smooth}
-body{font-family:'Nunito',Arial,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
-body.lock{overflow:hidden}
-button,input,textarea,select{font:inherit}
-button,a{-webkit-tap-highlight-color:transparent}
-button{cursor:pointer}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:
- radial-gradient(circle at 5% 0%,rgba(48,56,168,.10),transparent 28%),
- radial-gradient(circle at 100% 75%,rgba(8,11,92,.07),transparent 30%)}
-.wrap{min-height:100vh}
+
+html{scroll-behavior:smooth;}
+
+body{
+  font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+  background: var(--soft);
+  color: var(--text);
+  min-height: 100vh;
+  padding-bottom: 40px;
+}
+
+/* Ambient Background */
+body::before{
+  content:'';
+  position:fixed; inset:0; z-index:0;
+  background: 
+    radial-gradient(circle at 5% 5%, rgba(18, 24, 138, 0.08), transparent 35%),
+    radial-gradient(circle at 95% 85%, rgba(8, 11, 92, 0.06), transparent 40%);
+  pointer-events:none;
+}
+
+.wrap{position:relative; z-index:1;}
 
 /* HEADER */
-header{position:sticky;top:0;z-index:200;background:linear-gradient(135deg,var(--navy-dark),var(--navy) 52%,var(--navy2));box-shadow:0 7px 28px rgba(5,7,63,.26)}
-.hinner{max-width:1180px;margin:auto;padding:13px 18px 15px}
-.htop{display:flex;align-items:center;justify-content:space-between;gap:16px}
-.brand{display:flex;align-items:center;gap:11px;min-width:0}
-.brand-icon{width:48px;height:48px;flex:none;border-radius:15px;overflow:hidden;background:#fff;border:2px solid rgba(255,255,255,.8);box-shadow:0 5px 18px rgba(0,0,0,.2)}
-.brand-icon img{width:100%;height:100%;object-fit:cover;display:block}
-.brand h1{font-size:18px;font-weight:900;color:#fff;line-height:1.1}
-.brand p{font-size:11px;color:rgba(255,255,255,.67);font-weight:700;margin-top:3px}
-.hactions{display:flex;gap:8px}
-.hbtn{width:42px;height:42px;border-radius:13px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.17);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;position:relative;transition:.2s}
-.hbtn:hover{background:rgba(255,255,255,.19);transform:translateY(-1px)}
-.hbtn:active{transform:scale(.94)}
-.hbtn svg{fill:#fff;width:20px;height:20px}
-.cart-badge{position:absolute;right:-5px;top:-5px;min-width:19px;height:19px;padding:0 4px;border-radius:20px;background:#fff;color:var(--navy);font-size:10px;font-weight:900;display:none;align-items:center;justify-content:center;border:2px solid var(--navy)}
-.sbox{position:relative;margin-top:13px}
-.sbox input{width:100%;height:46px;padding:0 45px 0 44px;border-radius:14px;border:1px solid rgba(255,255,255,.14);outline:none;background:rgba(255,255,255,.12);color:#fff;font-size:14px;font-weight:700;transition:.2s}
-.sbox input::placeholder{color:rgba(255,255,255,.57)}
-.sbox input:focus{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.38);box-shadow:0 0 0 4px rgba(255,255,255,.06)}
-.sicon{position:absolute;left:15px;top:50%;transform:translateY(-50%);font-size:17px;pointer-events:none}
-.clear-search{display:none;position:absolute;right:9px;top:7px;width:32px;height:32px;border:0;border-radius:10px;background:rgba(255,255,255,.13);color:#fff;font-size:17px}
-.clear-search.show{display:block}
+header{
+  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 60%, var(--navy2) 100%);
+  position: sticky; top:0; z-index:200;
+  box-shadow: 0 4px 20px rgba(4, 6, 56, 0.3);
+  backdrop-filter: blur(10px);
+}
 
-/* INFO */
-.locbar{max-width:1180px;margin:auto;padding:10px 18px;color:var(--navy);font-size:12px;font-weight:800;display:flex;align-items:center;gap:7px}
-.hero{background:linear-gradient(180deg,#fff,#f7f8fd);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.hero-inner{max-width:1180px;margin:auto;padding:13px 18px;display:flex;justify-content:center;gap:18px;flex-wrap:wrap;color:var(--muted);font-size:12px;font-weight:800}
-.hero-item strong{color:var(--navy)}
-.dot{color:#b7bad0}
+.hinner{
+  max-width: 960px; margin: 0 auto;
+  padding: 14px 16px;
+  display: flex; flex-direction: column; gap: 12px;
+}
 
-/* PRODUCTS */
-.sec-head{max-width:1180px;margin:24px auto 0;padding:0 18px;display:flex;align-items:center;gap:12px}
-.sec-head h2{font-size:18px;font-weight:900}
-.sec-line{height:1px;background:var(--line);flex:1}
-.sec-pill{padding:5px 11px;border-radius:999px;background:var(--navy);color:#fff;font-size:11px;font-weight:900;box-shadow:0 5px 14px rgba(8,11,92,.14)}
-.container{max-width:1180px;margin:auto;padding:15px 18px 110px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
-.card{background:var(--card);border:1px solid rgba(8,11,92,.08);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;min-width:0;transition:transform .22s,box-shadow .22s,border-color .22s}
-.card:hover{transform:translateY(-5px);box-shadow:var(--shadow2);border-color:rgba(8,11,92,.15)}
-.card-img{position:relative;width:100%;aspect-ratio:1/0.84;background:linear-gradient(145deg,#fff,#fafaff);overflow:hidden;border-bottom:1px solid rgba(8,11,92,.05)}
-.card-img img{width:100%;height:100%;object-fit:contain;display:block;transition:transform .35s}
-.card:hover .card-img img{transform:scale(1.055)}
-.img-fallback{position:absolute;inset:0;display:none;align-items:center;justify-content:center;color:#9a9db5;font-size:12px;font-weight:800;background:#f0f1f8}
-.card-body{padding:13px 13px 14px;display:flex;flex-direction:column;flex:1}
-.card-body h3{font-size:14px;font-weight:900;line-height:1.3;min-height:36px;margin-bottom:6px}
-.price-row{display:flex;align-items:baseline;gap:4px;margin-bottom:11px}
-.price{font-size:16px;font-weight:900;color:var(--navy2)}
-.punit{font-size:11px;color:var(--muted);font-weight:800}
-.bwrap{position:relative;margin-top:auto}
-.btn{width:100%;height:40px;border:0;border-radius:11px;background:var(--navy);color:#fff;font-size:13px;font-weight:900;display:flex;align-items:center;justify-content:center;gap:6px;transition:.18s;box-shadow:0 5px 14px rgba(8,11,92,.14)}
-.btn:hover{background:var(--navy2);box-shadow:0 7px 18px rgba(8,11,92,.20)}
-.btn:active{transform:scale(.97)}
-.btn.added{background:var(--success)}
-.cbadge{position:absolute;right:-6px;top:-9px;min-width:21px;height:21px;padding:0 5px;border-radius:99px;background:#fff;color:var(--navy);border:2px solid var(--navy);display:none;align-items:center;justify-content:center;font-size:10px;font-weight:900}
-.fb{height:15px;margin-top:5px;text-align:center;color:var(--success);font-size:10px;font-weight:900}
-.no-results{grid-column:1/-1;background:#fff;border:1px solid var(--line);border-radius:18px;padding:70px 20px;text-align:center;color:var(--muted);font-weight:800}
-.foot{padding:22px 18px 35px;text-align:center;color:var(--muted);font-size:11px;font-weight:700}
+.htop{
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 12px;
+}
 
-/* MOBILE CART BAR */
-.mobile-cart{position:fixed;left:12px;right:12px;bottom:12px;z-index:300;display:none}
-.mobile-cart button{width:100%;height:54px;border:0;border-radius:17px;background:linear-gradient(135deg,var(--navy-dark),var(--navy2));color:#fff;box-shadow:0 10px 35px rgba(5,7,63,.28);display:flex;align-items:center;justify-content:space-between;padding:0 17px;font-weight:900}
-.mc-left{display:flex;align-items:center;gap:9px}
-.mc-count{min-width:25px;height:25px;padding:0 6px;border-radius:99px;background:#fff;color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:11px}
-.mc-total{font-size:13px}
+.brand{display: flex; align-items: center; gap: 12px; min-width: 0;}
 
-/* MODAL */
-.overlay{position:fixed;inset:0;background:rgba(3,5,35,.66);backdrop-filter:blur(6px);display:none;justify-content:center;align-items:flex-end;z-index:500;padding:12px}
-.modal{width:100%;max-width:520px;max-height:94vh;background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 25px 80px rgba(0,0,0,.25);animation:modalIn .25s cubic-bezier(.2,.9,.3,1)}
-@keyframes modalIn{from{opacity:0;transform:translateY(35px) scale(.98)}to{opacity:1;transform:none}}
-.mhead{padding:16px 18px;background:linear-gradient(135deg,var(--navy-dark),var(--navy2));display:flex;align-items:center;justify-content:space-between;color:#fff}
-.mhead h3{font-size:16px;font-weight:900}
-.mclose{width:32px;height:32px;border:0;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:16px}
-.mclose:hover{background:rgba(255,255,255,.24)}
-.mbody{padding:16px 18px 22px;max-height:calc(94vh - 64px);overflow:auto}
-.empty{text-align:center;padding:34px 10px;color:#9a9db5;font-weight:800}
-.cart-scroll{max-height:270px;overflow:auto;padding-right:2px}
-.ci{display:grid;grid-template-columns:minmax(0,1fr) auto auto auto;align-items:center;gap:9px;padding:10px 0;border-bottom:1px solid #eeeef5}
-.ci-name{min-width:0;font-size:13px;font-weight:800}
-.ci-sub{font-size:10px;color:#999db7;font-weight:700}
-.ci-price{font-size:12px;font-weight:900;color:var(--navy2);white-space:nowrap}
-.qctrl{display:flex;align-items:center;gap:4px}
-.qb{width:28px;height:28px;border:1px solid #dedfeb;background:#fff;border-radius:8px;color:var(--navy);font-size:15px;font-weight:900}
-.qb:hover{background:var(--soft)}
-.qn{min-width:20px;text-align:center;font-size:12px;font-weight:900}
-.delbtn{border:0;background:none;color:var(--danger);font-size:16px}
-.total-box{display:flex;align-items:center;justify-content:space-between;margin:13px 0 5px;padding:13px 14px;background:var(--soft);border:1px solid rgba(8,11,92,.10);border-radius:13px}
-.tlabel{font-size:13px;font-weight:800;color:var(--muted)}
-.tval{font-size:19px;font-weight:900;color:var(--navy)}
-.fsep{display:flex;align-items:center;gap:9px;margin:15px 0 11px}
-.fsep hr{border:0;border-top:1px solid #eeeef5;flex:1}
-.fsep span{font-size:11px;color:var(--muted);font-weight:900;white-space:nowrap}
-.field{margin-bottom:10px}
-.field label{display:block;margin-bottom:4px;font-size:10px;color:var(--muted);font-weight:900;text-transform:uppercase;letter-spacing:.45px}
-.field input,.field textarea,.field select{width:100%;border:1.5px solid #e0e1eb;background:#fafaff;color:var(--text);border-radius:11px;padding:11px 13px;outline:none;font-size:13px;font-weight:700;transition:.2s}
-.field textarea{resize:vertical;min-height:68px}
-.field input:focus,.field textarea:focus,.field select:focus{background:#fff;border-color:var(--navy2);box-shadow:0 0 0 4px rgba(8,11,92,.06)}
-.field input.err{border-color:var(--danger)}
-.errmsg{display:none;margin-top:3px;color:var(--danger);font-size:10px;font-weight:800}
-.warnbox{padding:10px 12px;border-radius:11px;background:#f7f7ff;border:1px solid #e0e2f3;color:#565a79;font-size:11px;line-height:1.55;font-weight:700}
-.sendbtn{width:100%;height:46px;margin-top:12px;border:0;border-radius:13px;background:linear-gradient(135deg,var(--navy-dark),var(--navy2));color:#fff;font-size:14px;font-weight:900;box-shadow:0 7px 20px rgba(8,11,92,.22);transition:.18s}
-.sendbtn:hover{box-shadow:0 10px 26px rgba(8,11,92,.28)}
-.sendbtn:active{transform:scale(.985)}
-.sendbtn:disabled{background:#c7c8d2;box-shadow:none;cursor:not-allowed}
+.brand-icon{
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: var(--white);
+  border: 2px solid rgba(255,255,255,0.9);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  display: flex; align-items: center; justify-content: center;
+}
+
+.brand-icon img{
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.brand h1{font-size: 18px; font-weight: 800; color: #fff; line-height: 1.1; letter-spacing: -0.3px;}
+.brand p{font-size: 11px; color: rgba(255,255,255,0.75); font-weight: 500; margin-top: 3px;}
+
+/* ACTIONS */
+.hactions{display: flex; align-items: center; gap: 8px;}
+
+.hbtn{
+  width: 42px; height: 42px; border-radius: 12px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; cursor: pointer;
+  text-decoration: none; color: #fff;
+  position: relative;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.hbtn:hover{
+  background: rgba(255, 255, 255, 0.22);
+  transform: translateY(-2px);
+}
+
+.hbtn:active{transform: scale(0.95);}
+.hbtn svg{fill: #fff; width: 20px; height: 20px;}
+
+.cart-badge{
+  position: absolute; top: -5px; right: -5px;
+  background: var(--accent); color: var(--navy-dark);
+  font-size: 11px; font-weight: 800;
+  border-radius: 20px; min-width: 20px; height: 20px;
+  padding: 0 5px;
+  display: none; align-items: center; justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+/* SEARCH */
+.sbox{position: relative;}
+
+.sbox input{
+  width: 100%; padding: 12px 16px 12px 44px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff; font-family: inherit; font-size: 14px; font-weight: 600;
+  outline: none; transition: all 0.2s ease;
+}
+
+.sbox input::placeholder{color: rgba(255, 255, 255, 0.6);}
+
+.sbox input:focus{
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
+}
+
+.sicon{
+  position: absolute; left: 14px; top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px; pointer-events: none; opacity: 0.8;
+}
+
+/* LOCATION & HERO */
+.locbar{
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+  padding: 10px 16px;
+  font-size: 12px; font-weight: 700; color: var(--navy);
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  box-shadow: var(--shadow-sm);
+}
+
+.hero{
+  text-align: center;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(5px);
+  border-bottom: 1px solid var(--line);
+  font-size: 12px; font-weight: 700; color: var(--muted);
+}
+
+.hero span{color: var(--navy3); font-weight: 800;}
+
+/* CATEGORIES NAV */
+.cat-nav{
+  max-width: 960px; margin: 16px auto 0;
+  padding: 0 16px;
+  display: flex; gap: 8px;
+  overflow-x: auto; scrollbar-width: none;
+}
+.cat-nav::-webkit-scrollbar {display: none;}
+
+.cat-chip{
+  background: #fff; color: var(--muted);
+  border: 1px solid var(--line);
+  padding: 8px 16px; border-radius: 30px;
+  font-size: 12px; font-weight: 700;
+  white-space: nowrap; cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.cat-chip:hover, .cat-chip.active{
+  background: var(--navy); color: #fff;
+  border-color: var(--navy);
+  transform: translateY(-1px);
+}
+
+/* SECTION HEAD */
+.sec-head{
+  max-width: 960px; margin: 20px auto 10px;
+  padding: 0 16px;
+  display: flex; align-items: center; gap: 12px;
+}
+
+.sec-head h2{font-size: 16px; font-weight: 800; color: var(--navy-dark);}
+.sec-line{flex: 1; height: 1px; background: var(--line);}
+
+.sec-pill{
+  background: var(--navy2); color: #fff;
+  font-size: 11px; font-weight: 800;
+  padding: 4px 12px; border-radius: 20px;
+}
+
+/* GRID */
+.container{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 14px;
+  padding: 10px 16px 40px;
+  max-width: 960px; margin: 0 auto;
+}
+
+/* CARD */
+.card{
+  background: #fff;
+  border-radius: var(--r-md);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+  display: flex; flex-direction: column;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.card:hover{
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(8, 11, 92, 0.18);
+}
+
+.card-img{
+  width: 100%; aspect-ratio: 1;
+  overflow: hidden; flex-shrink: 0;
+  background: #fff; position: relative;
+  display: flex; align-items: center; justify-content: center;
+  padding: 8px; border-bottom: 1px solid rgba(0,0,0,0.03);
+}
+
+.card-img img{
+  width: 100%; height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-img img{transform: scale(1.06);}
+
+.card-body{padding: 12px; display: flex; flex-direction: column; flex: 1;}
+.card-body h3{
+  font-size: 13px; font-weight: 700; color: var(--text);
+  margin-bottom: 6px; line-height: 1.3;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  height: 34px;
+}
+
+.price-row{display: flex; align-items: baseline; gap: 4px; margin-bottom: 12px;}
+.price{font-size: 15px; font-weight: 800; color: var(--navy2);}
+.punit{font-size: 11px; font-weight: 600; color: var(--muted);}
+
+/* BUTTON & QUANTITY CONTROLS */
+.bwrap{position: relative; margin-top: auto;}
+
+.btn{
+  width: 100%; padding: 9px;
+  border: none; background: var(--navy); color: #fff;
+  border-radius: 10px;
+  font-family: inherit; font-size: 13px; font-weight: 700;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.btn:hover{background: var(--navy2); box-shadow: 0 4px 12px rgba(8, 11, 92, 0.2);}
+.btn:active{transform: scale(0.96);}
+
+/* Inline Quantity Control */
+.card-qctrl{
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--soft); border-radius: 10px; padding: 3px;
+  border: 1px solid var(--line);
+}
+
+.card-qb{
+  width: 28px; height: 28px; border: none;
+  background: #fff; border-radius: 8px;
+  font-size: 14px; font-weight: 800; color: var(--navy);
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: background 0.15s;
+}
+
+.card-qb:active{background: var(--line);}
+.card-qn{font-weight: 800; font-size: 13px; color: var(--navy);}
+
+.no-results{
+  grid-column: 1/-1; text-align: center;
+  padding: 60px 20px; color: var(--muted); font-weight: 700;
+}
+
+/* FOOTER */
+.foot{
+  text-align: center; padding: 24px 16px;
+  font-size: 12px; font-weight: 600; color: var(--muted);
+}
+
+/* OVERLAY & MODAL */
+.overlay{
+  position: fixed; inset: 0;
+  background: rgba(4, 6, 45, 0.6);
+  backdrop-filter: blur(4px);
+  display: none; justify-content: center; align-items: flex-end;
+  z-index: 500; opacity: 0; transition: opacity 0.25s ease;
+}
+
+.overlay.active{display: flex; opacity: 1;}
+
+.modal{
+  background: #fff; width: 100%; max-width: 480px;
+  border-radius: 24px 24px 0 0;
+  max-height: 90vh; overflow-y: auto;
+  transform: translateY(100%); transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--shadow-lg);
+}
+
+.overlay.active .modal{transform: translateY(0);}
+
+@media(min-width: 520px){
+  .overlay{align-items: center;}
+  .modal{border-radius: 24px; max-height: 85vh;}
+}
+
+.mhead{
+  background: linear-gradient(135deg, var(--navy-dark), var(--navy2));
+  padding: 18px 20px; border-radius: 24px 24px 0 0;
+  display: flex; align-items: center; justify-content: space-between;
+  position: sticky; top: 0; z-index: 10;
+}
+
+.mhead h3{color: #fff; font-size: 16px; font-weight: 800;}
+
+.mclose{
+  width: 32px; height: 32px; border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff; font-size: 14px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s;
+}
+
+.mclose:hover{background: rgba(255,255,255,0.3);}
+
+.mbody{padding: 20px;}
+
+.empty{text-align: center; padding: 40px 20px; color: var(--muted); font-weight: 700;}
+
+.ci{
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 0; border-bottom: 1px solid var(--line);
+}
+
+.ci-name{flex: 1; font-size: 13px; font-weight: 700; color: var(--text);}
+.ci-sub{font-size: 11px; color: var(--muted); font-weight: 600;}
+.ci-price{font-size: 13px; font-weight: 800; color: var(--navy2); white-space: nowrap;}
+
+.qctrl{display: flex; align-items: center; gap: 6px;}
+
+.qb{
+  width: 28px; height: 28px;
+  border: 1px solid rgba(0,0,0,0.1); background: var(--soft);
+  border-radius: 8px; font-size: 14px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-family: inherit; color: var(--navy); font-weight: 800;
+}
+
+.qb:hover{background: #e5e8f5;}
+.qn{min-width: 20px; text-align: center; font-weight: 800; font-size: 13px;}
+.delbtn{background: none; border: none; color: #ef4444; font-size: 16px; cursor: pointer; padding: 4px;}
+
+.total-box{
+  display: flex; justify-content: space-between; align-items: center;
+  margin: 16px 0 8px; padding: 14px 16px;
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.tlabel{font-size: 13px; font-weight: 700; color: var(--muted);}
+.tval{font-size: 18px; font-weight: 800; color: var(--navy);}
+
+.fsep{display: flex; align-items: center; gap: 10px; margin: 20px 0 14px;}
+.fsep span{font-size: 12px; font-weight: 800; color: var(--muted); white-space: nowrap;}
+.fsep hr{flex: 1; border: none; border-top: 1px solid var(--line);}
+
+.field{margin-bottom: 12px;}
+
+.field label{
+  display: block; font-size: 11px; font-weight: 800;
+  color: var(--muted); margin-bottom: 4px;
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+
+.field input, .field textarea, .field select{
+  width: 100%; padding: 11px 14px;
+  border-radius: 12px; border: 1.5px solid rgba(8, 11, 92, 0.12);
+  font-family: inherit; font-size: 14px; font-weight: 600;
+  color: var(--text); background: #fafaff; outline: none;
+  transition: all 0.2s ease;
+}
+
+.field input:focus, .field textarea:focus, .field select:focus{
+  border-color: var(--navy2);
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(8, 11, 92, 0.06);
+}
+
+.field input.err{border-color: #ef4444;}
+.errmsg{font-size: 11px; font-weight: 700; color: #ef4444; margin-top: 3px; display: none;}
+
+.warnbox{
+  background: #fff8f0;
+  border: 1px solid #ffe8cc;
+  border-radius: 12px; padding: 12px;
+  font-size: 12px; font-weight: 600;
+  color: #8a5300; line-height: 1.5; margin-top: 12px;
+}
+
+.sendbtn{
+  width: 100%; margin-top: 16px; padding: 14px;
+  background: linear-gradient(135deg, var(--navy-dark), var(--navy2));
+  color: #fff; border: none; border-radius: 14px;
+  font-family: inherit; font-size: 15px; font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(8, 11, 92, 0.25);
+  transition: all 0.2s ease;
+}
+
+.sendbtn:hover{
+  opacity: 0.95;
+  box-shadow: 0 6px 20px rgba(8, 11, 92, 0.35);
+}
+
+.sendbtn:active{transform: scale(0.98);}
+.sendbtn:disabled{background: #ccc; box-shadow: none; cursor: not-allowed;}
 
 /* TOAST */
-.toast{position:fixed;left:50%;bottom:23px;z-index:9999;transform:translate(-50%,15px);opacity:0;pointer-events:none;background:var(--navy);color:#fff;padding:11px 18px;border-radius:999px;font-size:12px;font-weight:900;box-shadow:0 9px 28px rgba(0,0,0,.2);transition:.25s;white-space:nowrap}
-.toast.show{opacity:1;transform:translate(-50%,0)}
+.toast{
+  position: fixed; bottom: 24px; left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--navy-dark); color: #fff;
+  padding: 12px 24px; border-radius: 30px;
+  font-size: 13px; font-weight: 700;
+  opacity: 0; transition: all 0.3s ease;
+  z-index: 9999; white-space: nowrap; pointer-events: none;
+  box-shadow: var(--shadow-lg); border: 1px solid rgba(255,255,255,0.1);
+}
+
+.toast.show{opacity: 1; transform: translateX(-50%) translateY(0);}
 
 /* RESPONSIVE */
-@media(max-width:900px){.container{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:650px){
-  .hinner{padding:11px 12px 12px}.brand-icon{width:43px;height:43px;border-radius:13px}.brand h1{font-size:16px}.brand p{display:none}
-  .hbtn{width:39px;height:39px;border-radius:11px}.locbar{padding:9px 12px;font-size:10px}
-  .hero-inner{padding:11px 12px;gap:7px 11px;font-size:10px}.dot{display:none}
-  .sec-head{margin-top:17px;padding:0 12px}.sec-head h2{font-size:16px}
-  .container{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:11px 10px 95px}
-  .card{border-radius:15px}.card-body{padding:10px}.card-body h3{font-size:12px;min-height:32px}.price{font-size:14px}.btn{height:38px;font-size:12px}.card-img{aspect-ratio:1/0.86}
-  .mobile-cart{display:block}
-  .foot{padding-bottom:80px}
+@media(max-width: 480px){
+  .brand h1{font-size: 15px;}
+  .brand p{display: none;}
+  .container{grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 10px 10px 36px;}
 }
-@media(min-width:651px){.mobile-cart{display:none!important}}
-@media(max-width:380px){.brand h1{font-size:14px}.hactions{gap:5px}.hbtn{width:36px;height:36px}.card-body h3{font-size:11px}.price{font-size:13px}}
-@media(min-width:1000px){.container{grid-template-columns:repeat(5,minmax(0,1fr))}}
-@media(min-width:1250px){.container{grid-template-columns:repeat(5,minmax(0,1fr));gap:18px}}
+
+@media(min-width: 640px){
+  .container{grid-template-columns: repeat(3, 1fr);}
+}
+
+@media(min-width: 860px){
+  .container{grid-template-columns: repeat(4, 1fr);}
+}
 </style>
 </head>
-
 <body>
 <div class="wrap">
+
 <header>
   <div class="hinner">
     <div class="htop">
       <div class="brand">
         <div class="brand-icon"><img src="Dastrxon.uz logo.jpg" alt="Dastrxon.uz logo"></div>
-        <div><h1>Dastrxon.uz</h1><p>To'raqo'rg'on · Namangan</p></div>
+        <div>
+          <h1>Dastrxon.uz</h1>
+          <p>To'raqo'rg'on · Namangan</p>
+        </div>
       </div>
       <div class="hactions">
-        <a href="tel:+998998634115" class="hbtn" title="Qo'ng'iroq" aria-label="Qo'ng'iroq">📞</a>
-        <a href="https://t.me/Dastrxon_uzz" class="hbtn" target="_blank" rel="noopener" title="Telegram" aria-label="Telegram">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.04 15.47L8.9 19.2c.4 0 .58-.18.8-.4l1.9-1.8 3.94 2.9c.72.4 1.23.2 1.42-.67l2.6-12.2c.27-1.24-.45-1.73-1.13-1.48L3.4 9.3c-1.2.47-1.18 1.15-.2 1.45l4.6 1.43L18.5 7.3c.52-.32.99-.14.6.2"/></svg>
+        <a href="tel:+998998634115" class="hbtn" title="Qo'ng'iroq">📞</a>
+        <a href="https://t.me/Dastrxon_uzz" class="hbtn" target="_blank" title="Telegram">
+          <svg viewBox="0 0 24 24"><path d="M9.04 15.47L8.9 19.2c.4 0 .58-.18.8-.4l1.9-1.8 3.94 2.9c.72.4 1.23.2 1.42-.67l2.6-12.2c.27-1.24-.45-1.73-1.13-1.48L3.4 9.3c-1.2.47-1.18 1.15-.2 1.45l4.6 1.43L18.5 7.3c.52-.32.99-.14.6.2"/></svg>
         </a>
-        <button class="hbtn" onclick="openCart()" title="Savat" aria-label="Savat">
-          🛒<span class="cart-badge" id="cart-badge">0</span>
-        </button>
+        <div class="hbtn" onclick="openCart()" title="Savat">
+          🛒
+          <div class="cart-badge" id="cart-badge">0</div>
+        </div>
       </div>
     </div>
     <div class="sbox">
       <span class="sicon">🔍</span>
-      <input id="search" type="search" autocomplete="off" placeholder="Mahsulot qidirish..." aria-label="Mahsulot qidirish">
-      <button class="clear-search" id="clear-search" onclick="clearSearch()" aria-label="Qidiruvni tozalash">×</button>
+      <input id="search" type="search" placeholder="Mahsulot qidirish...">
     </div>
   </div>
 </header>
@@ -189,420 +518,445 @@ header{position:sticky;top:0;z-index:200;background:linear-gradient(135deg,var(-
 <div class="locbar">📍 Namangan viloyati, To'raqo'rg'on tumani, Markaziy dehqon bozori</div>
 
 <div class="hero">
-  <div class="hero-inner">
-    <span class="hero-item">🌿 <strong>Yangi</strong> va sifatli mahsulotlar</span>
-    <span class="dot">•</span>
-    <span class="hero-item">🚚 <strong>Bugun</strong> yetkazib beramiz</span>
-    <span class="dot">•</span>
-    <span class="hero-item">📦 Buyurtma <strong>Telegram</strong> orqali</span>
-  </div>
+  🌿 Yangi va sifatli mahsulotlar &nbsp;·&nbsp; <span>Bugun yetkazib beramiz</span> &nbsp;·&nbsp; 📦 Buyurtma Telegram orqali
+</div>
+
+<!-- Category Navigation -->
+<div class="cat-nav">
+  <button class="cat-chip active" onclick="filterCat('all')">Barchasi</button>
+  <button class="cat-chip" onclick="filterCat('yog')">Yog' va Sarโยg'</button>
+  <button class="cat-chip" onclick="filterCat('makaron')">Makaronlar</button>
+  <button class="cat-chip" onclick="filterCat('ichimlik')">Ichimliklar</button>
+  <button class="cat-chip" onclick="filterCat('choy')">Choy va Tuz</button>
+  <button class="cat-chip" onclick="filterCat('shirinlik')">Shirinliklar</button>
 </div>
 
 <div class="sec-head">
-  <h2>Mahsulotlar</h2><div class="sec-line"></div><span class="sec-pill" id="sec-pill">0 ta</span>
+  <h2 id="sec-title">Barcha mahsulotlar</h2>
+  <div class="sec-line"></div>
+  <span class="sec-pill" id="sec-pill">0 ta</span>
 </div>
+
 <div class="container" id="products"></div>
+
 <div class="foot">© 2026 Dastrxon.uz — To'raqo'rg'on &nbsp;·&nbsp; +998 99 863 41 15</div>
+
 </div>
 
-<div class="mobile-cart" id="mobile-cart">
-  <button onclick="openCart()">
-    <span class="mc-left">🛒 <span>Savat</span><span class="mc-count" id="mc-count">0</span></span>
-    <span class="mc-total" id="mc-total">0 so'm</span>
-  </button>
-</div>
-
+<!-- Cart Modal -->
 <div class="overlay" id="overlay" onclick="bgClose(event)">
-  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="cart-title">
+  <div class="modal">
     <div class="mhead">
-      <h3 id="cart-title">🛒 Mening savatim</h3>
-      <button class="mclose" onclick="closeCart()" aria-label="Yopish">✕</button>
+      <h3>🛒 Mening savatim</h3>
+      <button class="mclose" onclick="closeCart()">✕</button>
     </div>
     <div class="mbody">
-      <div class="cart-scroll" id="cart-list"></div>
+      <div id="cart-list"></div>
       <div class="total-box" id="total-box" style="display:none">
-        <span class="tlabel">Jami to'lov:</span><span class="tval" id="tval">0 so'm</span>
+        <span class="tlabel">Jami to'lov:</span>
+        <span class="tval" id="tval">0 so'm</span>
       </div>
 
       <div class="fsep"><hr><span>📋 Buyurtma ma'lumotlari</span><hr></div>
 
       <div class="field">
-        <label for="f-name">Ismingiz *</label>
-        <input id="f-name" placeholder="To'liq ismingiz" autocomplete="name">
+        <label>Ismingiz *</label>
+        <input id="f-name" placeholder="To'liq ismingiz">
         <div class="errmsg" id="e-name">Ism kiritilmagan</div>
       </div>
       <div class="field">
-        <label for="f-phone">Telefon *</label>
-        <input id="f-phone" placeholder="+998 xx xxx xx xx" type="tel" inputmode="tel" autocomplete="tel">
+        <label>Telefon *</label>
+        <input id="f-phone" placeholder="+998 xx xxx xx xx" type="tel">
         <div class="errmsg" id="e-phone">Telefon kiritilmagan</div>
       </div>
       <div class="field">
-        <label for="f-addr">Manzil / Mo'ljal</label>
+        <label>Manzil / Mo'ljal</label>
         <textarea id="f-addr" placeholder="Ko'cha, uy raqami yoki orientir..." rows="2"></textarea>
       </div>
       <div class="field">
-        <label for="f-del">Yetkazish usuli</label>
+        <label>Yetkazish usuli</label>
         <select id="f-del">
           <option value="Yetkazish">🚚 Yetkazib berish</option>
           <option value="Olib ketish">🏃 O'zim olib ketaman</option>
         </select>
       </div>
-      <div class="warnbox">⚠️ To'lov <strong>oldindan</strong> amalga oshiriladi. Mahsulot online taksi orqali yetkazib beriladi — yo'l haqi mijoz tomonidan to'lanadi.</div>
+
+      <div class="warnbox">
+        ⚠️ To'lov <strong>oldindan</strong> amalga oshiriladi. Mahsulot online taksi orqali yetkazib beriladi — yo'l haqi mijoz tomonidan to'lanadi.
+      </div>
+
       <button class="sendbtn" id="sendbtn" onclick="send()">📨 Buyurtma yuborish</button>
     </div>
   </div>
 </div>
 
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="toast" id="toast"></div>
 
 <script>
 const P=[
-  /* --- Eski Ro'yxat --- */
-  {id:'z5',name:'Zateya 5L', price:130000, img:'zateya5.jpg'},
-  {id:'sh',name:'Shakar', price:13000, img:'shakar.jpg'},
-  {id:'oq',name:'Oq qand', price:13000, img:'oq qand.jpg'},
-  {id:'milter',name:'Milter 1L', price:22000, img:'milter1.jpg'},
-  {id:'zateya',name:'Zateya 1L', price:26000, img:'zateya1.jpg'},
-  {id:'mosh',name:'Mosh', price:20000, img:'mosh.jpg'},
-  {id:'bottega_burama',name:'Bottega Burama', price:8000, img:'bottegaburama.jpg'},
-  {id:'bottega_pero',name:'Bottega Pero', price:8000, img:'bottegapero.jpg'},
-  {id:'golden_ugra',name:'Golden Ugra', price:5000, img:'goldenugra.jpg'},
-  {id:'spagetti_sb',name:'Spagetti SB', price:5000, img:'spagettisb.jpg'},
-  {id:'bonmak_vermishel',name:'Bonmak Makaron', price:10000, img:'bonmakpvermishel.jpg'},
-  {id:'bonmak_uzun',name:'Bonmak Uzun', price:10000, img:'bonmakpuzun.jpg'},
-  {id:'ravon_disk',name:'Ravon Disk', price:10000, img:'ravondisk.jpg'},
-  {id:'bonmak_mayda',name:'Bonmak Mayda', price:10000, img:'bonmakpmayda.jpg'},
-  {id:'bonmak_shox',name:'Bonmak Shox', price:10000, img:'bonmakpshox.jpg'},
-  {id:'bonmak_burama',name:'Bonmak Burama', price:10000, img:'bonmakpburama.jpg'},
-  {id:'bonmak_pero',name:'Bonmak Pero', price:10000, img:'bonmakppero.jpg'},
-  {id:'bonmak_pero2',name:'Bonmak Pero', price:10000, img:'bonmakppero2.jpg'},
-  {id:'spagetti_tuxumli',name:'Spagetti Tuxumli', price:5000, img:'spagettiuzun.jpg'},
-  {id:'dala',name:'Dala Makaron', price:10000, img:'dalamakaron.jpg'},
-  {id:'makaron_burama',name:'Makaron Burama', price:10000, img:'bonmakburama.jpg'},
-  {id:'makaron_uzun',name:'Makaron Uzun', price:10000, img:'bonmakuzun.jpg'},
-  {id:'makaron_pero',name:'Makaron Pero', price:10000, img:'bonmakpero.jpg'},
-  {id:'makaron_shox',name:'Makaron Shox', price:10000, img:'bonmakshox.jpg'},
-  {id:'makaron_mayda',name:'Makaron Mayda', price:10000, img:'bonmakmayda.jpg'},
-  {id:'goldmag',name:'Goldmag', price:12000, img:'goldmag.jpg'},
-  {id:'jayma2',name:'Jayma', price:18000, img:'jayma2.jpg'},
-  {id:'jayma1',name:'Jayma', price:15000, img:'jayma1.jpg'},
-  {id:'grechka',name:'Grechka', price:12000, img:'grechka.jpg'},
-  {id:'noxat',name:'Noxat', price:17000, img:'noxat.jpg'},
-  {id:'gorox',name:'Gorox', price:10000, img:'gorox.jpg'},
-  {id:'ovsyanka',name:'Ovsyanka', price:8000, img:'ovsyanka.jpg'},
-  {id:'kasha',name:'Kasha', price:12000, img:'kasha.jpg'},
-  {id:'perlovka',name:'Perlovka', price:8000, img:'perlovka.jpg'},
-  {id:'ozbegim',name:"O'zbegim ko'k choy", price:20000, img:'ozbegim.jpg'},
-  {id:'gt55',name:"Gt55 ko'k choy", price:20000, img:'gt55.jpg'},
-  {id:'makonpachka',name:"Makon ko'k choy 400-gram", price:25000, img:'makonpachka.jpg'},
-  {id:'ziynatvodiy',name:"Ziynatvodiy ko'k choy 400-gram", price:20000, img:'ziynatvodiy.jpg'},
-  {id:'n9371',name:"9371 ko'k choy 400-gram", price:20000, img:'9371.jpg'},
-  {id:'n8810_200',name:"8810 ko'k choy 400-gram", price:45000, img:'8810-200.jpg'},
-  {id:'orzukok',name:'Orzu tuz', price:5000, img:'orzukok.jpg'},
-  {id:'milliy2',name:'Milliy tuz', price:2000, img:'milliy2.jpg'},
-  {id:'samara',name:'Samara tuz', price:3000, img:'samara.jpg'},
-  {id:'milliy1',name:'Milliy arzon tuz', price:1000, img:'milliy1.jpg'},
-  {id:'ziyonur',name:'Ziyonur arzon tuz', price:1000, img:'ziyonur.jpg'},
-  {id:'orzukok3',name:'Orzu 3-kg', price:12000, img:'orzukok3.jpg'},
-  {id:'asli3',name:'Asli 1-navli un 3-kg', price:20000, img:'asli3.jpg'},
-  {id:'asli5',name:'Asli 1-navli un 5-kg', price:32000, img:'asli5.jpg'},
-  {id:'zlatojar3',name:'Zlatojar 3L', price:68000, img:'zlatojar3.jpg'},
-  {id:'zateya1_8',name:'Zateya 1.8L', price:48000, img:'zateya1.8.jpg'},
-  {id:'blago1_8',name:'Blago 1.8L', price:45000, img:'blago1.8.jpg'},
-  {id:'sifat5',name:'Sifat 5L', price:105000, img:'sifat5.jpg'},
-  {id:'muslim5',name:'Muslim 5L', price:105000, img:'muslim5.jpg'},
-  {id:'n3jelaniyatomat',name:'Tri Jelaniya tomat', price:15000, img:'3jelaniyatomat.jpg'},
-  {id:'sardobatomat0_5',name:'Sardoba tomat 0.5-kg', price:15000, img:'sardobatomat0.5.jpg'},
-  {id:'sardobatomat1',name:'Sardoba tomat 1-kg', price:30000, img:'sardobatomat1.jpg'},
-  {id:'zolotse1l',name:'Zolotse 1L', price:22000, img:'zolotse 1l.jpg'},
-  {id:'magistr',name:'Magistr 5L', price:110000, img:'magistr.jpg'},
-  {id:'donya',name:'Donya 5L', price:115000, img:'donya.jpg'},
-  {id:'anhor5l',name:'Anhor 5L', price:105000, img:'anhor 5l.jpg'},
-  {id:'hot_lunch_achiq_sous',name:'Hot-Lunch ', price:4000, img:'hot-lunch achiq sous.jpg'},
-  {id:'hot_lunch_sous_shirin',name:'Hot-Lunch ', price:4000, img:'hot-lunch sous shirin.jpg'},
-  {id:'hot_lunch_achiq',name:'Hot-Lunch', price:4000, img:'hot-lunch achiq.jpg'},
-  {id:'hot_lunch_oddiy',name:'Hot-Lunch', price:4000, img:'hot-lunch oddiy.jpg'},
-  {id:'hot_lunch_mini_oddiy',name:'Hot-Lunch mini', price:2500, img:'hot-lunch mini oddiy.jpg'},
-  {id:'hot_lunch_mini_achiq',name:'Hot-Lunch mini', price:2500, img:'hot-lunch mini achiq.jpg'},
-  {id:'hot_lunch_gosht_oddiy',name:"Hot-Lunch go'sht shirin", price:4000, img:'hot-lunch gosht oddiy.jpg'},
-  {id:'hot_lunch_gosht_achiq',name:"Hot-Lunch go'sht achiq", price:4000, img:'hot-lunch gosht achiq.jpg'},
-  {id:'hot_lunch_stakan_oddiy',name:'Hot-Lunch stakan shirin', price:8000, img:'hot-lunch stakan oddiy.jpg'},
-  {id:'hot_lunch_stakan_achiq',name:'Hot-Lunch stakan achiq', price:8000, img:'hot-lunch stakan achiq.jpg'},
-  {id:'cheff_sir',name:'Cheff sirli', price:5000, img:'cheff sir.jpg'},
-  {id:'cheff_ot',name:"Cheff ot go'shtli", price:5000, img:'cheff ot.jpg'},
-  {id:'cheff_indeyka',name:'Cheff indeyka', price:5000, img:'cheff indeyka.jpg'},
-  {id:'maselko_ketchup',name:'Maselko ketchup', price:12000, img:'maselko ketchup.jpg'},
-  {id:'maselko_mayanez',name:'Maselko mayanez', price:18000, img:'maselko mayanez.jpg'},
-  {id:'maselko_sg_paqir',name:'Maselko sgushonniy moloko vedro', price:28000, img:'maselko sg paqir.jpg'},
-  {id:'maselko_sg_kichik',name:'Maselko sgushonniy moloko kichik', price:10000, img:'maselko sg kichik.jpg'},
-  {id:'maselko_sg_orta',name:'Maselko sgushonniy moloko o\'rta', price:15000, img:'maselko sg orta.jpg'},
-  {id:'maselko_sg_katta',name:'Maselko sgushonniy moloko katta', price:25000, img:'maselko sg katta.jpg'},
-  {id:'nashe_maselko_200',name:'Nashe maselko 200-gr', price:12000, img:'nashe maselko 200.jpg'},
-  {id:'nashe_maselko_500',name:'Nashe maselko 500', price:28000, img:'nashe maselko 500.jpg'},
-  {id:'milter_siqma_kichik',name:'Milter siqma mayanez kichik', price:7000, img:'milter siqma kichik.jpg'},
-  {id:'milter_siqma_katta',name:'Milter siqma mayanez katta', price:13000, img:'milter siqma katta.jpg'},
-  {id:'milter_iriska_kichik',name:'Milter iriska kichik', price:10000, img:'milter iriska kichik.jpg'},
-  {id:'milter_iriska_orta',name:'Milter iriska o\'rta', price:15000, img:'milter iriska orta.jpg'},
-  {id:'milter_iriska_katta',name:'Milter iriska katta', price:25000, img:'milter iriska katta.jpg'},
-  {id:'milter_kichik',name:'Milter sgushonniy moloko kichik', price:10000, img:'milter kichik.jpg'},
-  {id:'milter_orta',name:'Milter sgushonniy moloko o\'rta', price:15000, img:'milter orta.jpg'},
-  {id:'milter_katta',name:'Milter sgushonniy moloko katta', price:23000, img:'milter katta.jpg'},
-  {id:'milter_chili',name:'Milter chili', price:7000, img:'milter chili.jpg'},
-  {id:'milter_saryog_200',name:'Milter saryog\' 200-gr', price:10000, img:'milter saryog 200.jpg'},
-  {id:'milter_saryog_500',name:'Milter saryog\' 500-gr', price:20000, img:'milter saryog 500.jpg'},
-  {id:'u7_utra_200',name:'7 utra 200-gr', price:15000, img:'7 utra 200.jpg'},
-  {id:'u7_utra_500',name:'7 utra 500-gr', price:35000, img:'7 utra 500.jpg'},
-  {id:'kiyevskoye', name:"Kiyevskoye saryog'", price:35000, img:'kiyevskoye.jpg'},
-  {id:'donna', name:"Donna saryog'", price:36000, img:'donna.jpg'},
-  {id:'sl_1', name:'shedroye leto 1-kg', price:48000, img:'shedroye leto 1.jpg'},
-  {id:'sl_500', name:'shedroye leto 500-gr', price:25000, img:'shedroye leto 500.jpg'},
-  {id:'sl_250', name:'shedroye leto 250-gr', price:13000, img:'shedroye leto 250.jpg'},
-  {id:'sl_200', name:'shedroye leto 200-gr', price:11000, img:'shedroye leto 200.jpg'},
-  {id:'chocotella_katta', name:'Chocotella katta', price:38000, img:'chocotella katta.jpg'},
-  {id:'chocotella_kichik', name:'Chocotella kichik', price:25000, img:'chocotella kichik.jpg'},
-  {id:'chococream_200', name:'Chococream 200-gr', price:23000, img:'chococream 200.jpg'},
-  {id:'chococream_300', name:'Chococream 300-gr', price:32000, img:'chococream 300.jpg'},
-  {id:'chococream_400_round', name:'Chococream 400-gr', price:38000, img:'chococream 400 round.jpg'},
-  {id:'chococream_500', name:'Chococream 600-gr', price:50000, img:'chococream 500.jpg'},
-  {id:'m_gov', name:"maggi bulyon go'sht", price:5000, img:'maggi govyajina.jpg'},
-  {id:'m_tov', name:'maggi bulyon tovuq', price:5000, img:'maggi bulyon tovuq.jpg'},
-  {id:'m_uni', name:'maggi universal', price:12000, img:'maggi universal.jpg'},
-  {id:'m_gul', name:'maggi gulyash', price:8000, img:'maggi gulyash.jpg'},
-  {id:'gb_mol_k', name:'galina blanka mol kichik', price:1000, img:'galina mol kichik.jpg'},
-  {id:'gb_tov_k', name:'galina blanka tovuq kichik', price:1000, img:'galina tovuq kichik.jpg'},
-  {id:'gb_mol_ka', name:'galina blanka mol katta', price:8000, img:'galina mol katta.jpg'},
-  {id:'gb_tov_ka', name:'galina blanka tovuq katta', price:8000, img:'galina tovuq katta.jpg'},
-  {id:'gor_pom', name:'gorilla pomegranate', price:12000, img:'gorilla pomegranate.jpg'},
-  {id:'gor_man', name:'gorilla mango', price:12000, img:'gorilla mango.jpg'},
-  {id:'gor_wat', name:'gorilla watermelon', price:12000, img:'gorilla watermelon.jpg'},
-  {id:'gor_ult', name:'gorilla ultimate', price:12000, img:'gorilla ultimate.jpg'},
-  {id:'gorilla', name:'gorilla', price:12000, img:'gorilla.jpg'},
-  {id:'mir_1_5', name:'mirinda 1.5', price:12000, img:'mirinda 1.5.jpg'},
-  {id:'mir_1', name:'mirinda 1', price:8000, img:'mirinda 1.jpg'},
-  {id:'adr_500', name:'adrenaline 0.5', price:16000, img:'adrenaline 500.jpg'},
-  {id:'adr_250', name:'adrenaline 0.25', price:10000, img:'adrenaline 250.jpg'},
-  {id:'7up_1', name:'7up 1-L', price:8000, img:'7up 1.jpg'},
-  {id:'lip_mal_1_5', name:'lipton malina 1.5-L', price:14000, img:'lipton malina 1.5.jpg'},
-  {id:'lip_shaf_1_5', name:'lipton shaftoli 1.5-L', price:14000, img:'lipton shaftoli 1.5.jpg'},
-  {id:'lip_shaf_1', name:'lipton shaftoli 1-L', price:10000, img:'lipton shaftoli 1.jpg'},
-  {id:'lip_shaf_0_5_qo', name:'lipton shaftoli 0.5-L qora', price:7000, img:'lipton shaftoli 0.5 qora.jpg'},
-  {id:'lip_shaf_0_5_ko', name:'lipton shaftoli 0.5-L ko\'k', price:7000, img:'lipton shaftoli 0.5 kok.jpg'},
-  {id:'lip_lim_1', name:'lipton limon 1-L', price:10000, img:'lipton limon 1.jpg'},
-  {id:'lip_lim_0_5', name:'lipton limon 0.5', price:7000, img:'lipton limon 0.5.jpg'},
-  {id:'pep_2', name:'pepsi 2', price:18000, img:'pepsi 2.jpg'},
-  {id:'pep_1_5', name:'pepsi 1.5', price:15000, img:'pepsi 1.5.jpg'},
-  {id:'pep_1', name:'pepsi 1', price:10000, img:'pepsi 1.jpg'},
-  {id:'pep_0_5', name:'pepsi 0.5', price:8000, img:'pepsi 0.5.jpg'},
-  {id:'pep_0_26', name:'pepsi 0.26', price:3000, img:'pepsi 0.26.jpg'},
-  {id:'suv', name:'Hydrolife gazli 0.5-L', price:3000, img:'hydrolife gaz 0.5.jpg'},
-  {id:'suv', name:'Hydrolife gazli 1-L', price:4000, img:'hydrolife gaz 1.jpg'},
-  {id:'suv', name:'Hydrolife gazli 1.5-L', price:5000, img:'hydrolife gaz 1.5.jpg'},
-  {id:'suv', name:'Hydrolife gazsiz 0.5-L', price:3000, img:'hydrolife bez 0.5.jpg'},
-  {id:'suv', name:'Hydrolife gazsiz 1-L', price:4000, img:'hydrolife bez 1.jpg'},
-  {id:'suv', name:'Hydrolife gazsiz 1.5-L', price:5000, img:'hydrolife bez 1.5.jpg'},
-  {id:'suv', name:'Hydrolife 5-L', price:7000, img:'hydrolife 5.jpg'},
-  {id:'suv', name:'Hydrolife 10-L', price:10000, img:'hydrolife 10.jpg'},
+  /* --- Original Product List (Unchanged Data) --- */
+  {id:'z5',name:'Zateya 5L', price:130000, img:'zateya5.jpg', cat:'yog'},
+  {id:'sh',name:'Shakar', price:13000, img:'shakar.jpg', cat:'choy'},
+  {id:'oq',name:'Oq qand', price:13000, img:'oq qand.jpg', cat:'choy'},
+  {id:'milter',name:'Milter 1L', price:22000, img:'milter1.jpg', cat:'yog'},
+  {id:'zateya',name:'Zateya 1L', price:26000, img:'zateya1.jpg', cat:'yog'},
+  {id:'mosh',name:'Mosh', price:20000, img:'mosh.jpg', cat:'choy'},
+  {id:'bottega_burama',name:'Bottega Burama', price:8000, img:'bottegaburama.jpg', cat:'makaron'},
+  {id:'bottega_pero',name:'Bottega Pero', price:8000, img:'bottegapero.jpg', cat:'makaron'},
+  {id:'golden_ugra',name:'Golden Ugra', price:5000, img:'goldenugra.jpg', cat:'makaron'},
+  {id:'spagetti_sb',name:'Spagetti SB', price:5000, img:'spagettisb.jpg', cat:'makaron'},
+  {id:'bonmak_vermishel',name:'Bonmak Makaron', price:10000, img:'bonmakpvermishel.jpg', cat:'makaron'},
+  {id:'bonmak_uzun',name:'Bonmak Uzun', price:10000, img:'bonmakpuzun.jpg', cat:'makaron'},
+  {id:'ravon_disk',name:'Ravon Disk', price:10000, img:'ravondisk.jpg', cat:'makaron'},
+  {id:'bonmak_mayda',name:'Bonmak Mayda', price:10000, img:'bonmakpmayda.jpg', cat:'makaron'},
+  {id:'bonmak_shox',name:'Bonmak Shox', price:10000, img:'bonmakpshox.jpg', cat:'makaron'},
+  {id:'bonmak_burama',name:'Bonmak Burama', price:10000, img:'bonmakpburama.jpg', cat:'makaron'},
+  {id:'bonmak_pero',name:'Bonmak Pero', price:10000, img:'bonmakppero.jpg', cat:'makaron'},
+  {id:'bonmak_pero2',name:'Bonmak Pero', price:10000, img:'bonmakppero2.jpg', cat:'makaron'},
+  {id:'spagetti_tuxumli',name:'Spagetti Tuxumli', price:5000, img:'spagettiuzun.jpg', cat:'makaron'},
+  {id:'dala',name:'Dala Makaron', price:10000, img:'dalamakaron.jpg', cat:'makaron'},
+  {id:'makaron_burama',name:'Makaron Burama', price:10000, img:'bonmakburama.jpg', cat:'makaron'},
+  {id:'makaron_uzun',name:'Makaron Uzun', price:10000, img:'bonmakuzun.jpg', cat:'makaron'},
+  {id:'makaron_pero',name:'Makaron Pero', price:10000, img:'bonmakpero.jpg', cat:'makaron'},
+  {id:'makaron_shox',name:'Makaron Shox', price:10000, img:'bonmakshox.jpg', cat:'makaron'},
+  {id:'makaron_mayda',name:'Makaron Mayda', price:10000, img:'bonmakmayda.jpg', cat:'makaron'},
+  {id:'goldmag',name:'Goldmag', price:12000, img:'goldmag.jpg', cat:'makaron'},
+  {id:'jayma2',name:'Jayma', price:18000, img:'jayma2.jpg', cat:'makaron'},
+  {id:'jayma1',name:'Jayma', price:15000, img:'jayma1.jpg', cat:'makaron'},
+  {id:'grechka',name:'Grechka', price:12000, img:'grechka.jpg', cat:'choy'},
+  {id:'noxat',name:'Noxat', price:17000, img:'noxat.jpg', cat:'choy'},
+  {id:'gorox',name:'Gorox', price:10000, img:'gorox.jpg', cat:'choy'},
+  {id:'ovsyanka',name:'Ovsyanka', price:8000, img:'ovsyanka.jpg', cat:'choy'},
+  {id:'kasha',name:'Kasha', price:12000, img:'kasha.jpg', cat:'choy'},
+  {id:'perlovka',name:'Perlovka', price:8000, img:'perlovka.jpg', cat:'choy'},
+  {id:'ozbegim',name:"O'zbegim ko'k choy", price:20000, img:'ozbegim.jpg', cat:'choy'},
+  {id:'gt55',name:"Gt55 ko'k choy", price:20000, img:'gt55.jpg', cat:'choy'},
+  {id:'makonpachka',name:"Makon ko'k choy 400-gram", price:25000, img:'makonpachka.jpg', cat:'choy'},
+  {id:'ziynatvodiy',name:"Ziynatvodiy ko'k choy 400-gram", price:20000, img:'ziynatvodiy.jpg', cat:'choy'},
+  {id:'n9371',name:"9371 ko'k choy 400-gram", price:20000, img:'9371.jpg', cat:'choy'},
+  {id:'n8810_200',name:"8810 ko'k choy 400-gram", price:45000, img:'8810-200.jpg', cat:'choy'},
+  {id:'orzukok',name:'Orzu tuz', price:5000, img:'orzukok.jpg', cat:'choy'},
+  {id:'milliy2',name:'Milliy tuz', price:2000, img:'milliy2.jpg', cat:'choy'},
+  {id:'samara',name:'Samara tuz', price:3000, img:'samara.jpg', cat:'choy'},
+  {id:'milliy1',name:'Milliy arzon tuz', price:1000, img:'milliy1.jpg', cat:'choy'},
+  {id:'ziyonur',name:'Ziyonur arzon tuz', price:1000, img:'ziyonur.jpg', cat:'choy'},
+  {id:'orzukok3',name:'Orzu 3-kg', price:12000, img:'orzukok3.jpg', cat:'choy'},
+  {id:'asli3',name:'Asli 1-navli un 3-kg', price:20000, img:'asli3.jpg', cat:'choy'},
+  {id:'asli5',name:'Asli 1-navli un 5-kg', price:32000, img:'asli5.jpg', cat:'choy'},
+  {id:'zlatojar3',name:'Zlatojar 3L', price:68000, img:'zlatojar3.jpg', cat:'yog'},
+  {id:'zateya1_8',name:'Zateya 1.8L', price:48000, img:'zateya1.8.jpg', cat:'yog'},
+  {id:'blago1_8',name:'Blago 1.8L', price:45000, img:'blago1.8.jpg', cat:'yog'},
+  {id:'sifat5',name:'Sifat 5L', price:105000, img:'sifat5.jpg', cat:'yog'},
+  {id:'muslim5',name:'Muslim 5L', price:105000, img:'muslim5.jpg', cat:'yog'},
+  {id:'n3jelaniyatomat',name:'Tri Jelaniya tomat', price:15000, img:'3jelaniyatomat.jpg', cat:'choy'},
+  {id:'sardobatomat0_5',name:'Sardoba tomat 0.5-kg', price:15000, img:'sardobatomat0.5.jpg', cat:'choy'},
+  {id:'sardobatomat1',name:'Sardoba tomat 1-kg', price:30000, img:'sardobatomat1.jpg', cat:'choy'},
+  {id:'zolotse1l',name:'Zolotse 1L', price:22000, img:'zolotse 1l.jpg', cat:'yog'},
+  {id:'magistr',name:'Magistr 5L', price:110000, img:'magistr.jpg', cat:'yog'},
+  {id:'donya',name:'Donya 5L', price:115000, img:'donya.jpg', cat:'yog'},
+  {id:'anhor5l',name:'Anhor 5L', price:105000, img:'anhor 5l.jpg', cat:'yog'},
+  {id:'hot_lunch_achiq_sous',name:'Hot-Lunch ', price:4000, img:'hot-lunch achiq sous.jpg', cat:'makaron'},
+  {id:'hot_lunch_sous_shirin',name:'Hot-Lunch ', price:4000, img:'hot-lunch sous shirin.jpg', cat:'makaron'},
+  {id:'hot_lunch_achiq',name:'Hot-Lunch', price:4000, img:'hot-lunch achiq.jpg', cat:'makaron'},
+  {id:'hot_lunch_oddiy',name:'Hot-Lunch', price:4000, img:'hot-lunch oddiy.jpg', cat:'makaron'},
+  {id:'hot_lunch_mini_oddiy',name:'Hot-Lunch mini', price:2500, img:'hot-lunch mini oddiy.jpg', cat:'makaron'},
+  {id:'hot_lunch_mini_achiq',name:'Hot-Lunch mini', price:2500, img:'hot-lunch mini achiq.jpg', cat:'makaron'},
+  {id:'hot_lunch_gosht_oddiy',name:"Hot-Lunch go'sht shirin", price:4000, img:'hot-lunch gosht oddiy.jpg', cat:'makaron'},
+  {id:'hot_lunch_gosht_achiq',name:"Hot-Lunch go'sht achiq", price:4000, img:'hot-lunch gosht achiq.jpg', cat:'makaron'},
+  {id:'hot_lunch_stakan_oddiy',name:'Hot-Lunch stakan shirin', price:8000, img:'hot-lunch stakan oddiy.jpg', cat:'makaron'},
+  {id:'hot_lunch_stakan_achiq',name:'Hot-Lunch stakan achiq', price:8000, img:'hot-lunch stakan achiq.jpg', cat:'makaron'},
+  {id:'cheff_sir',name:'Cheff sirli', price:5000, img:'cheff sir.jpg', cat:'makaron'},
+  {id:'cheff_ot',name:"Cheff ot go'shtli", price:5000, img:'cheff ot.jpg', cat:'makaron'},
+  {id:'cheff_indeyka',name:'Cheff indeyka', price:5000, img:'cheff indeyka.jpg', cat:'makaron'},
+  {id:'maselko_ketchup',name:'Maselko ketchup', price:12000, img:'maselko ketchup.jpg', cat:'shirinlik'},
+  {id:'maselko_mayanez',name:'Maselko mayanez', price:18000, img:'maselko mayanez.jpg', cat:'shirinlik'},
+  {id:'maselko_sg_paqir',name:'Maselko sgushonniy moloko vedro', price:28000, img:'maselko sg paqir.jpg', cat:'shirinlik'},
+  {id:'maselko_sg_kichik',name:'Maselko sgushonniy moloko kichik', price:10000, img:'maselko sg kichik.jpg', cat:'shirinlik'},
+  {id:'maselko_sg_orta',name:'Maselko sgushonniy moloko o\'rta', price:15000, img:'maselko sg orta.jpg', cat:'shirinlik'},
+  {id:'maselko_sg_katta',name:'Maselko sgushonniy moloko katta', price:25000, img:'maselko sg katta.jpg', cat:'shirinlik'},
+  {id:'nashe_maselko_200',name:'Nashe maselko 200-gr', price:12000, img:'nashe maselko 200.jpg', cat:'yog'},
+  {id:'nashe_maselko_500',name:'Nashe maselko 500', price:28000, img:'nashe maselko 500.jpg', cat:'yog'},
+  {id:'milter_siqma_kichik',name:'Milter siqma mayanez kichik', price:7000, img:'milter siqma kichik.jpg', cat:'shirinlik'},
+  {id:'milter_siqma_katta',name:'Milter siqma mayanez katta', price:13000, img:'milter siqma katta.jpg', cat:'shirinlik'},
+  {id:'milter_iriska_kichik',name:'Milter iriska kichik', price:10000, img:'milter iriska kichik.jpg', cat:'shirinlik'},
+  {id:'milter_iriska_orta',name:'Milter iriska o\'rta', price:15000, img:'milter iriska orta.jpg', cat:'shirinlik'},
+  {id:'milter_iriska_katta',name:'Milter iriska katta', price:25000, img:'milter iriska katta.jpg', cat:'shirinlik'},
+  {id:'milter_kichik',name:'Milter sgushonniy moloko kichik', price:10000, img:'milter kichik.jpg', cat:'shirinlik'},
+  {id:'milter_orta',name:'Milter sgushonniy moloko o\'rta', price:15000, img:'milter orta.jpg', cat:'shirinlik'},
+  {id:'milter_katta',name:'Milter sgushonniy moloko katta', price:23000, img:'milter katta.jpg', cat:'shirinlik'},
+  {id:'milter_chili',name:'Milter chili', price:7000, img:'milter chili.jpg', cat:'shirinlik'},
+  {id:'milter_saryog_200',name:'Milter saryog\' 200-gr', price:10000, img:'milter saryog 200.jpg', cat:'yog'},
+  {id:'milter_saryog_500',name:'Milter saryog\' 500-gr', price:20000, img:'milter saryog 500.jpg', cat:'yog'},
+  {id:'u7_utra_200',name:'7 utra 200-gr', price:15000, img:'7 utra 200.jpg', cat:'yog'},
+  {id:'u7_utra_500',name:'7 utra 500-gr', price:35000, img:'7 utra 500.jpg', cat:'yog'},
+  {id:'kiyevskoye', name:"Kiyevskoye saryog'", price:35000, img:'kiyevskoye.jpg', cat:'yog'},
+  {id:'donna', name:"Donna saryog'", price:36000, img:'donna.jpg', cat:'yog'},
+  {id:'sl_1', name:'shedroye leto 1-kg', price:48000, img:'shedroye leto 1.jpg', cat:'yog'},
+  {id:'sl_500', name:'shedroye leto 500-gr', price:25000, img:'shedroye leto 500.jpg', cat:'yog'},
+  {id:'sl_250', name:'shedroye leto 250-gr', price:13000, img:'shedroye leto 250.jpg', cat:'yog'},
+  {id:'sl_200', name:'shedroye leto 200-gr', price:11000, img:'shedroye leto 200.jpg', cat:'yog'},
+  {id:'chocotella_katta', name:'Chocotella katta', price:38000, img:'chocotella katta.jpg', cat:'shirinlik'},
+  {id:'chocotella_kichik', name:'Chocotella kichik', price:25000, img:'chocotella kichik.jpg', cat:'shirinlik'},
+  {id:'chococream_200', name:'Chococream 200-gr', price:23000, img:'chococream 200.jpg', cat:'shirinlik'},
+  {id:'chococream_300', name:'Chococream 300-gr', price:32000, img:'chococream 300.jpg', cat:'shirinlik'},
+  {id:'chococream_400_round', name:'Chococream 400-gr', price:38000, img:'chococream 400 round.jpg', cat:'shirinlik'},
+  {id:'chococream_500', name:'Chococream 600-gr', price:50000, img:'chococream 500.jpg', cat:'shirinlik'},
+  {id:'m_gov', name:"maggi bulyon go'sht", price:5000, img:'maggi govyajina.jpg', cat:'choy'},
+  {id:'m_tov', name:'maggi bulyon tovuq', price:5000, img:'maggi bulyon tovuq.jpg', cat:'choy'},
+  {id:'m_uni', name:'maggi universal', price:12000, img:'maggi universal.jpg', cat:'choy'},
+  {id:'m_gul', name:'maggi gulyash', price:8000, img:'maggi gulyash.jpg', cat:'choy'},
+  {id:'gb_mol_k', name:'galina blanka mol kichik', price:1000, img:'galina mol kichik.jpg', cat:'choy'},
+  {id:'gb_tov_k', name:'galina blanka tovuq kichik', price:1000, img:'galina tovuq kichik.jpg', cat:'choy'},
+  {id:'gb_mol_ka', name:'galina blanka mol katta', price:8000, img:'galina mol katta.jpg', cat:'choy'},
+  {id:'gb_tov_ka', name:'galina blanka tovuq katta', price:8000, img:'galina tovuq katta.jpg', cat:'choy'},
+  {id:'gor_pom', name:'gorilla pomegranate', price:12000, img:'gorilla pomegranate.jpg', cat:'ichimlik'},
+  {id:'gor_man', name:'gorilla mango', price:12000, img:'gorilla mango.jpg', cat:'ichimlik'},
+  {id:'gor_wat', name:'gorilla watermelon', price:12000, img:'gorilla watermelon.jpg', cat:'ichimlik'},
+  {id:'gor_ult', name:'gorilla ultimate', price:12000, img:'gorilla ultimate.jpg', cat:'ichimlik'},
+  {id:'gorilla', name:'gorilla', price:12000, img:'gorilla.jpg', cat:'ichimlik'},
+  {id:'mir_1_5', name:'mirinda 1.5', price:12000, img:'mirinda 1.5.jpg', cat:'ichimlik'},
+  {id:'mir_1', name:'mirinda 1', price:8000, img:'mirinda 1.jpg', cat:'ichimlik'},
+  {id:'adr_500', name:'adrenaline 0.5', price:16000, img:'adrenaline 500.jpg', cat:'ichimlik'},
+  {id:'adr_250', name:'adrenaline 0.25', price:10000, img:'adrenaline 250.jpg', cat:'ichimlik'},
+  {id:'7up_1', name:'7up 1-L', price:8000, img:'7up 1.jpg', cat:'ichimlik'},
+  {id:'lip_mal_1_5', name:'lipton malina 1.5-L', price:14000, img:'lipton malina 1.5.jpg', cat:'ichimlik'},
+  {id:'lip_shaf_1_5', name:'lipton shaftoli 1.5-L', price:14000, img:'lipton shaftoli 1.5.jpg', cat:'ichimlik'},
+  {id:'lip_shaf_1', name:'lipton shaftoli 1-L', price:10000, img:'lipton shaftoli 1.jpg', cat:'ichimlik'},
+  {id:'lip_shaf_0_5_qo', name:'lipton shaftoli 0.5-L qora', price:7000, img:'lipton shaftoli 0.5 qora.jpg', cat:'ichimlik'},
+  {id:'lip_shaf_0_5_ko', name:'lipton shaftoli 0.5-L ko\'k', price:7000, img:'lipton shaftoli 0.5 kok.jpg', cat:'ichimlik'},
+  {id:'lip_lim_1', name:'lipton limon 1-L', price:10000, img:'lipton limon 1.jpg', cat:'ichimlik'},
+  {id:'lip_lim_0_5', name:'lipton limon 0.5', price:7000, img:'lipton limon 0.5.jpg', cat:'ichimlik'},
+  {id:'pep_2', name:'pepsi 2', price:18000, img:'pepsi 2.jpg', cat:'ichimlik'},
+  {id:'pep_1_5', name:'pepsi 1.5', price:15000, img:'pepsi 1.5.jpg', cat:'ichimlik'},
+  {id:'pep_1', name:'pepsi 1', price:10000, img:'pepsi 1.jpg', cat:'ichimlik'},
+  {id:'pep_0_5', name:'pepsi 0.5', price:8000, img:'pepsi 0.5.jpg', cat:'ichimlik'},
+  {id:'pep_0_26', name:'pepsi 0.26', price:3000, img:'pepsi 0.26.jpg', cat:'ichimlik'},
+  {id:'suv_g_05', name:'Hydrolife gazli 0.5-L', price:3000, img:'hydrolife gaz 0.5.jpg', cat:'ichimlik'},
+  {id:'suv_g_1', name:'Hydrolife gazli 1-L', price:4000, img:'hydrolife gaz 1.jpg', cat:'ichimlik'},
+  {id:'suv_g_15', name:'Hydrolife gazli 1.5-L', price:5000, img:'hydrolife gaz 1.5.jpg', cat:'ichimlik'},
+  {id:'suv_b_05', name:'Hydrolife gazsiz 0.5-L', price:3000, img:'hydrolife bez 0.5.jpg', cat:'ichimlik'},
+  {id:'suv_b_1', name:'Hydrolife gazsiz 1-L', price:4000, img:'hydrolife bez 1.jpg', cat:'ichimlik'},
+  {id:'suv_b_15', name:'Hydrolife gazsiz 1.5-L', price:5000, img:'hydrolife bez 1.5.jpg', cat:'ichimlik'},
+  {id:'suv_5', name:'Hydrolife 5-L', price:7000, img:'hydrolife 5.jpg', cat:'ichimlik'},
+  {id:'suv_10', name:'Hydrolife 10-L', price:10000, img:'hydrolife 10.jpg', cat:'ichimlik'},
 ];
 
 let cart={};
-const fmt=n=>n.toLocaleString('uz-UZ');
+let currentCat = 'all';
+const fmt = n => n.toLocaleString('uz-UZ');
 
-/* Bir xil ID'li mahsulotlar ham savatda alohida ishlashi uchun ichki kalit */
-const keyOf=(p,index)=>`${p.id}__${index}`;
-const getByKey=key=>{
-  const i=key.lastIndexOf('__');
-  const index=Number(key.slice(i+2));
-  return Number.isInteger(index)&&P[index]?P[index]:null;
-};
+function filterCat(cat){
+  currentCat = cat;
+  document.querySelectorAll('.cat-chip').forEach(c => c.classList.remove('active'));
+  event.target.classList.add('active');
+  
+  const titleMap = {
+    'all': 'Barcha mahsulotlar',
+    'yog': 'Yog\' va Saryog\'lar',
+    'makaron': 'Makaron mahsulotlari',
+    'ichimlik': 'Salqin ichimliklar',
+    'choy': 'Choy va ziravorlar',
+    'shirinlik': 'Shirinlik va souslar'
+  };
+  document.getElementById('sec-title').textContent = titleMap[cat] || 'Mahsulotlar';
+  
+  applyFilter();
+}
+
+function applyFilter(){
+  const q = document.getElementById('search').value.trim().toLowerCase();
+  let filtered = P;
+  
+  if(currentCat !== 'all'){
+    filtered = filtered.filter(p => p.cat === currentCat);
+  }
+  
+  if(q){
+    filtered = filtered.filter(p => p.name.toLowerCase().includes(q));
+  }
+  
+  renderP(filtered);
+}
 
 function renderP(list){
-  const c=document.getElementById('products');
-  const pill=document.getElementById('sec-pill');
-  if(pill)pill.textContent=list.length+' ta';
+  const c = document.getElementById('products');
+  const pill = document.getElementById('sec-pill');
+  if(pill) pill.textContent = list.length + ' ta';
+  
   if(!list.length){
-    c.innerHTML='<div class="no-results">🔍<br><br>Mahsulot topilmadi</div>';
+    c.innerHTML = '<div class="no-results">🔍 Mahsulot topilmadi</div>';
     return;
   }
-  c.innerHTML=list.map(p=>{
-    const index=P.indexOf(p), key=keyOf(p,index);
+
+  c.innerHTML = list.map(p => {
+    const q = cart[p.id] || 0;
     return `
-      <article class="card">
-        <div class="card-img">
-          <img src="${p.img}" alt="${p.name}" loading="lazy"
-               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="img-fallback">Rasm mavjud emas</div>
+    <div class="card">
+      <div class="card-img">
+        <img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.parentElement.style.background='#eef0f8'">
+      </div>
+      <div class="card-body">
+        <h3>${p.name}</h3>
+        <div class="price-row">
+          <span class="price">${fmt(p.price)}</span>
+          <span class="punit">so'm</span>
         </div>
-        <div class="card-body">
-          <h3>${p.name}</h3>
-          <div class="price-row"><span class="price">${fmt(p.price)}</span><span class="punit">so'm</span></div>
-          <div class="bwrap">
-            <button class="btn" id="btn-${index}" onclick="add('${key}')"><span>+</span> Savat</button>
-            <div class="cbadge" id="cb-${index}"></div>
-          </div>
-          <div class="fb" id="fb-${index}"></div>
+        <div class="bwrap">
+          ${q > 0 ? `
+            <div class="card-qctrl">
+              <button class="card-qb" onclick="minus('${p.id}')">−</button>
+              <span class="card-qn">${q}</span>
+              <button class="card-qb" onclick="add('${p.id}')">+</button>
+            </div>
+          ` : `
+            <button class="btn" onclick="add('${p.id}')">
+              <span>+</span> Savatga
+            </button>
+          `}
         </div>
-      </article>`;
-  }).join('');
-  syncBadges();
+      </div>
+    </div>
+  `}).join('');
 }
 
-renderP(P);
+document.getElementById('search').addEventListener('input', applyFilter);
 
-const searchEl=document.getElementById('search');
-const clearEl=document.getElementById('clear-search');
-
-searchEl.addEventListener('input',function(){
-  const q=this.value.trim().toLowerCase();
-  clearEl.classList.toggle('show',!!q);
-  renderP(q?P.filter(p=>p.name.toLowerCase().includes(q)):P);
-});
-
-function clearSearch(){
-  searchEl.value='';
-  clearEl.classList.remove('show');
-  renderP(P);
-  searchEl.focus();
+function add(id){
+  cart[id] = (cart[id] || 0) + 1;
+  sync();
+  showToast('✓ Savatga qo\'shildi');
 }
 
-function add(key){cart[key]=(cart[key]||0)+1;sync();showFb(key)}
-function minus(key){if(!cart[key])return;cart[key]--;if(cart[key]<=0)delete cart[key];sync()}
-function remove(key){delete cart[key];sync()}
+function minus(id){
+  if(!cart[id]) return;
+  cart[id]--;
+  if(cart[id] <= 0) delete cart[id];
+  sync();
+}
+
+function remove(id){
+  delete cart[id];
+  sync();
+}
 
 function sync(){
-  syncBadges();syncCartBtn();
-  if(document.getElementById('overlay').style.display==='flex')renderCart();
-}
-
-function totalQty(){return Object.values(cart).reduce((s,q)=>s+q,0)}
-function totalPrice(){
-  return Object.entries(cart).reduce((s,[key,q])=>{
-    const p=getByKey(key);return s+(p?p.price*q:0)
-  },0)
+  syncCartBtn();
+  applyFilter();
+  if(document.getElementById('overlay').classList.contains('active')) renderCart();
 }
 
 function syncCartBtn(){
-  const qty=totalQty(), total=totalPrice();
-  const b=document.getElementById('cart-badge');
-  b.style.display=qty?'flex':'none';
-  b.textContent=qty>99?'99+':qty;
-  document.getElementById('mc-count').textContent=qty;
-  document.getElementById('mc-total').textContent=fmt(total)+" so'm";
-}
-
-function syncBadges(){
-  P.forEach((p,index)=>{
-    const b=document.getElementById('cb-'+index);
-    const btn=document.getElementById('btn-'+index);
-    if(!b||!btn)return;
-    const q=cart[keyOf(p,index)]||0;
-    if(q){
-      b.style.display='flex';b.textContent=q;
-      btn.innerHTML=`<span>✓</span> Savat (${q})`;btn.classList.add('added');
-    }else{
-      b.style.display='none';
-      btn.innerHTML='<span>+</span> Savat';btn.classList.remove('added');
-    }
-  });
+  const tot = Object.values(cart).reduce((s,q) => s + q, 0);
+  const b = document.getElementById('cart-badge');
+  b.style.display = tot > 0 ? 'flex' : 'none';
+  b.textContent = tot > 99 ? '99+' : tot;
 }
 
 function renderCart(){
-  const box=document.getElementById('cart-list');
-  const tb=document.getElementById('total-box');
-  const ids=Object.keys(cart).filter(k=>getByKey(k));
+  const box = document.getElementById('cart-list');
+  const tb = document.getElementById('total-box');
+  const ids = Object.keys(cart);
+  
   if(!ids.length){
-    box.innerHTML='<div class="empty">🛒<br><br>Savat bo\\'sh</div>';
-    tb.style.display='none';
-    document.getElementById('sendbtn').disabled=true;
+    box.innerHTML = '<div class="empty">🛒 Savat bo\'sh</div>';
+    tb.style.display = 'none';
+    document.getElementById('sendbtn').disabled = true;
     return;
   }
-  document.getElementById('sendbtn').disabled=false;
-  tb.style.display='flex';
-  box.innerHTML=ids.map(key=>{
-    const p=getByKey(key),q=cart[key],s=p.price*q;
-    return `<div class="ci">
+  
+  document.getElementById('sendbtn').disabled = false;
+  tb.style.display = 'flex';
+  let total = 0;
+  
+  box.innerHTML = ids.map(id => {
+    const p = P.find(x => x.id === id);
+    if(!p) return '';
+    const q = cart[id], s = p.price * q;
+    total += s;
+    return `
+    <div class="ci">
       <div class="ci-name">${p.name}<br><span class="ci-sub">${fmt(p.price)} × ${q}</span></div>
       <div class="ci-price">${fmt(s)} so'm</div>
       <div class="qctrl">
-        <button class="qb" onclick="minus('${key}')">−</button><span class="qn">${q}</span><button class="qb" onclick="add('${key}')">+</button>
+        <button class="qb" onclick="minus('${id}')">−</button>
+        <span class="qn">${q}</span>
+        <button class="qb" onclick="add('${id}')">+</button>
       </div>
-      <button class="delbtn" onclick="remove('${key}')" aria-label="O'chirish">🗑</button>
+      <button class="delbtn" onclick="remove('${id}')">🗑</button>
     </div>`;
   }).join('');
-  document.getElementById('tval').textContent=fmt(totalPrice())+" so'm";
+  
+  document.getElementById('tval').textContent = fmt(total) + ' so\'m';
 }
 
 function openCart(){
   renderCart();
-  document.getElementById('overlay').style.display='flex';
-  document.body.classList.add('lock');
+  const ov = document.getElementById('overlay');
+  ov.style.display = 'flex';
+  setTimeout(() => ov.classList.add('active'), 10);
 }
-function closeCart(){
-  document.getElementById('overlay').style.display='none';
-  document.body.classList.remove('lock');
-}
-function bgClose(e){if(e.target===document.getElementById('overlay'))closeCart()}
 
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeCart()});
+function closeCart(){
+  const ov = document.getElementById('overlay');
+  ov.classList.remove('active');
+  setTimeout(() => ov.style.display = 'none', 250);
+}
+
+function bgClose(e){
+  if(e.target === document.getElementById('overlay')) closeCart();
+}
 
 function send(){
-  const name=document.getElementById('f-name').value.trim();
-  const phone=document.getElementById('f-phone').value.trim();
-  const addr=document.getElementById('f-addr').value.trim();
-  const del=document.getElementById('f-del').value;
-  let ok=true;
-
-  const se=(fid,eid,bad)=>{
-    document.getElementById(fid).classList.toggle('err',bad);
-    document.getElementById(eid).style.display=bad?'block':'none';
+  const name = document.getElementById('f-name').value.trim();
+  const phone = document.getElementById('f-phone').value.trim();
+  const addr = document.getElementById('f-addr').value.trim();
+  const del = document.getElementById('f-del').value;
+  let ok = true;
+  
+  const se = (fid, eid, bad) => {
+    document.getElementById(fid).classList.toggle('err', bad);
+    document.getElementById(eid).style.display = bad ? 'block' : 'none';
   };
-
-  se('f-name','e-name',!name);
-  se('f-phone','e-phone',!phone);
-
-  if(!Object.keys(cart).length){showToast('❗ Avval mahsulot tanlang!');return}
-  if(!ok||!name||!phone){showToast('❗ Majburiy maydonlarni to\\'ldiring');return}
-
-  const items=Object.entries(cart).map(([key,q])=>{
-    const p=getByKey(key);return p?`${p.name} x${q}`:''
+  
+  se('f-name', 'e-name', !name); if(!name) ok = false;
+  se('f-phone', 'e-phone', !phone); if(!phone) ok = false;
+  
+  if(!Object.keys(cart).length){ showToast('❗ Avval mahsulot tanlang!'); return; }
+  if(!ok){ showToast('❗ Majburiy maydonlarni to\'ldiring'); return; }
+  
+  const items = Object.keys(cart).map(id => {
+    const p = P.find(x => x.id === id);
+    return p ? `${p.name} x${cart[id]}` : '';
   }).filter(Boolean).join(', ');
-
-  const total=totalPrice();
-  const msg=`🛒 Yangi buyurtma!
-
-👤 Ism: ${name}
-📞 Tel: ${phone}
-📍 Manzil: ${addr||'—'}
-🚚 Yetkazish: ${del}
-
-📦 Mahsulotlar:
-${items}
-
-💰 Jami: ${fmt(total)} so'm`;
-
-  window.open('https://t.me/Dastrxon_uzz?text='+encodeURIComponent(msg),'_blank');
-  cart={};sync();closeCart();
-  document.getElementById('f-name').value='';
-  document.getElementById('f-phone').value='';
-  document.getElementById('f-addr').value='';
+  
+  const total = Object.keys(cart).reduce((s, id) => {
+    const p = P.find(x => x.id === id);
+    return s + (p ? p.price * cart[id] : 0);
+  }, 0);
+  
+  const msg = `🛒 Yangi buyurtma!\n\n👤 Ism: ${name}\n📞 Tel: ${phone}\n📍 Manzil: ${addr||'—'}\n🚚 Yetkazish: ${del}\n\n📦 Mahsulotlar:\n${items}\n\n💰 Jami: ${fmt(total)} so'm`;
+  
+  window.open('https://t.me/Dastrxon_uzz?text=' + encodeURIComponent(msg));
+  
+  cart = {};
+  sync();
+  closeCart();
+  document.getElementById('f-name').value = '';
+  document.getElementById('f-phone').value = '';
+  document.getElementById('f-addr').value = '';
   showToast('✅ Buyurtma yuborildi!');
 }
 
-function showFb(key){
-  const i=key.lastIndexOf('__'),index=Number(key.slice(i+2));
-  const fb=document.getElementById('fb-'+index);
-  if(!fb)return;
-  fb.textContent='✓ Savatga qo\\'shildi';
-  clearTimeout(fb._t);
-  fb._t=setTimeout(()=>fb.textContent='',1500);
-}
-
 function showToast(msg){
-  const t=document.getElementById('toast');
-  t.textContent=msg;t.classList.add('show');
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
   clearTimeout(t._t);
-  t._t=setTimeout(()=>t.classList.remove('show'),2600);
+  t._t = setTimeout(() => t.classList.remove('show'), 2200);
 }
 
+// Initial Run
+applyFilter();
 syncCartBtn();
 </script>
 </body>
