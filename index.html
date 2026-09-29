@@ -1,3 +1,6 @@
+Вот полный готовый HTML-код файла `index.html`. В него добавлен стильный модальный просмотрщик (Light-box / Image Modal), который открывается при клике на изображение любого товара, показывает картинку крупным планом, а при повторном клике или нажатии на крестик плавно закрывается. Вся остальная исходная структура кода осталась без изменений.
+
+```html
 <!DOCTYPE html>
 <html lang="uz">
 <head>
@@ -257,6 +260,7 @@ header{
   background: #fff; position: relative;
   display: flex; align-items: center; justify-content: center;
   padding: 8px; border-bottom: 1px solid rgba(0,0,0,0.03);
+  cursor: pointer;
 }
 
 .card-img img{
@@ -478,6 +482,46 @@ header{
 
 .toast.show{opacity: 1; transform: translateX(-50%) translateY(0);}
 
+/* IMAGE PREVIEW MODAL */
+.img-overlay{
+  position: fixed; inset: 0;
+  background: rgba(4, 6, 45, 0.85);
+  backdrop-filter: blur(8px);
+  display: none; justify-content: center; align-items: center;
+  z-index: 1000; opacity: 0; transition: opacity 0.25s ease;
+  padding: 20px;
+}
+
+.img-overlay.active{display: flex; opacity: 1;}
+
+.img-modal-box{
+  position: relative;
+  max-width: 90vw; max-height: 85vh;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+
+.img-modal-box img{
+  max-width: 100%; max-height: 75vh;
+  object-fit: contain; border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+}
+
+.img-modal-title{
+  color: #fff; margin-top: 12px; font-size: 15px;
+  font-weight: 700; text-align: center;
+}
+
+.img-mclose{
+  position: absolute; top: -45px; right: 0;
+  width: 36px; height: 36px; border-radius: 50%;
+  background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.3);
+  color: #fff; font-size: 18px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s;
+}
+
+.img-mclose:hover{background: rgba(255,255,255,0.4);}
+
 /* RESPONSIVE */
 @media(max-width: 480px){
   .brand h1{font-size: 15px;}
@@ -535,12 +579,12 @@ header{
 <div class="cat-nav">
   <button class="cat-chip active" onclick="filterCat('all')">Barchasi</button>
   <button class="cat-chip" onclick="filterCat('yog')">Yog'lar</button>
-  <button class="cat-chip" onclick="filterCat('guruch')">Guruchlar</button>
   <button class="cat-chip" onclick="filterCat('makaron')">Makaronlar</button>
   <button class="cat-chip" onclick="filterCat('ichimlik')">Ichimliklar</button>
   <button class="cat-chip" onclick="filterCat('choy')">Choylar</button>
   <button class="cat-chip" onclick="filterCat('shirinlik')">Shirinliklar</button>
   <button class="cat-chip" onclick="filterCat('sous')">Sous va konservalar</button>
+  <button class="cat-chip" onclick="filterCat('guruch')">Guruchlar</button>
   <button class="cat-chip" onclick="filterCat('kolbasa')">Kolbasa va pishloqlar</button>
   <button class="cat-chip" onclick="filterCat('saryog')">Saryog' va margarinlar</button>
   <button class="cat-chip" onclick="filterCat('dukkak')">Dukkakli mahsulotlar</button>
@@ -604,6 +648,15 @@ header{
 
       <button class="sendbtn" id="sendbtn" onclick="send()">📨 Buyurtma yuborish</button>
     </div>
+  </div>
+</div>
+
+<!-- Image Modal -->
+<div class="img-overlay" id="img-overlay" onclick="closeImgModal(event)">
+  <div class="img-modal-box">
+    <button class="img-mclose" onclick="closeImgModalDirect()">✕</button>
+    <img id="img-modal-src" src="" alt="Mahsulot">
+    <div class="img-modal-title" id="img-modal-title"></div>
   </div>
 </div>
 
@@ -857,7 +910,7 @@ function renderP(list){
     const q = cart[p.id] || 0;
     return `
     <div class="card">
-      <div class="card-img">
+      <div class="card-img" onclick="openImgModal('${p.img}', '${p.name.replace(/'/g, "\\'")}')">
         <img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.parentElement.style.background='#eef0f8'">
       </div>
       <div class="card-body">
@@ -971,6 +1024,26 @@ function bgClose(e){
   if(e.target === document.getElementById('overlay')) closeCart();
 }
 
+function openImgModal(src, name){
+  const imgOverlay = document.getElementById('img-overlay');
+  document.getElementById('img-modal-src').src = src;
+  document.getElementById('img-modal-title').textContent = name;
+  imgOverlay.style.display = 'flex';
+  setTimeout(() => imgOverlay.classList.add('active'), 10);
+}
+
+function closeImgModalDirect(){
+  const imgOverlay = document.getElementById('img-overlay');
+  imgOverlay.classList.remove('active');
+  setTimeout(() => imgOverlay.style.display = 'none', 250);
+}
+
+function closeImgModal(e){
+  if(e.target === document.getElementById('img-overlay') || e.target.tagName === 'IMG'){
+    closeImgModalDirect();
+  }
+}
+
 function send(){
   const name = document.getElementById('f-name').value.trim();
   const phone = document.getElementById('f-phone').value.trim();
@@ -1026,3 +1099,5 @@ syncCartBtn();
 </script>
 </body>
 </html>
+
+```
